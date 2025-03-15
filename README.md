@@ -1,4 +1,6 @@
-# charlie's dotfiles
+# jamie's dotfiles
+
+this is a fork of [charlie's dotfiles](https://github.com/CharredLee/.dotfiles).
 
 the content of these dotfiles started as a fork of
 [ZaneyOS](https://gitlab.com/Zaney/zaneyos). much of the code in here is still

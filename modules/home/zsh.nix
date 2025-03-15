@@ -26,9 +26,8 @@
     shellAliases = {
       sv = "sudo nvim";
       v = "nvim";
-      c = "clear";
+      c = "code";
       y = "yazi";
-      home = "cd ~";
 
       fr = "nh os switch ~/.dotfiles --hostname ${profile}";
       fu = "nh os switch ~/.dotfiles --hostname ${profile} --update";

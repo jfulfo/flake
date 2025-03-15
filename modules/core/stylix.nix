@@ -30,8 +30,8 @@
     };
     fonts = {
       monospace = {
-        package = pkgs.nerd-fonts.fira-code; #jetbrains-mono;
-        name = "Fira Code";
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka";
       };
       sansSerif = {
         package = pkgs.montserrat;

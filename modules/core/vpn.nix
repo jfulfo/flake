@@ -1,6 +1,1 @@
-{pkgs, ...}: {
-  services.mullvad-vpn = {
-    enable = true;
-    package = pkgs.mullvad-vpn;
-  };
-}
+# update vpn to wg-tools

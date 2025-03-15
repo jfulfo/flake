@@ -1,5 +1,5 @@
 {
-  description = "charlie's nix config (based on ZaneyOS)";
+  description = "jamie's nix config (based on Charlie's dotfiles)";
 
   inputs = {
     home-manager = {
@@ -22,9 +22,9 @@
 
   outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
-    host = "charlie";
+    host = "cyberdeck";
     profile = "nvidia";
-    username = "charlie";
+    username = "jamie";
   in {
     nixosConfigurations = {
       amd = nixpkgs.lib.nixosSystem {
