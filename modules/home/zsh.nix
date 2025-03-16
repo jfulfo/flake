@@ -29,15 +29,15 @@
       c = "code";
       y = "yazi";
 
-      fr = "nh os switch ~/.dotfiles --hostname ${profile}";
-      fu = "nh os switch ~/.dotfiles --hostname ${profile} --update";
-      zu = "sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)";
+      fr = "nh os switch ~/flake --hostname ${profile}";
+      fu = "nh os switch ~/flake --hostname ${profile} --update";
       ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       cat = "bat";
       man = "BAT_THEME='default' batman";
 
-      l = "eza --icons  -a --group-directories-first -1"; # EZA_ICON_SPACING=2
-      ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
+      l = "eza --icons --group-directories-first -1"; # EZA_ICON_SPACING=2
+      la = "eza --icons -a --group-directories-first -1"; # EZA_ICON_SPACING=2
+      ll = "eza --icons --group-directories-first -1 --no-user --long";
       ls = "eza -a --icons";
       tree = "eza --icons --tree --group-directories-first";
 

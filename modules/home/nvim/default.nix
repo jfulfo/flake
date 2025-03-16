@@ -1,5 +1,7 @@
-_: {
-  imports = [
-    ./nvf.nix
-  ];
+{ pkgs, 
+  ... 
+}: {
+  programs.neovim = {
+    enable = true;
+  };
 }

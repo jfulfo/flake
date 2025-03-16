@@ -23,7 +23,7 @@ in {
         "nm-applet --indicator"
         "lxqt-policykit-agent"
         "pypr &"
-        "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/hollow-knight.png"
+	"sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/hollow-knight.png"
       ];
 
       input = {
@@ -40,7 +40,12 @@ in {
           natural_scroll = true;
           disable_while_typing = true;
           scroll_factor = 0.8;
+	  clickfinger_behavior = true;
         };
+      };
+
+      gestures = {
+      	workspace_swipe = true;
       };
 
       general = {
@@ -60,6 +65,7 @@ in {
         initial_workspace_tracking = 0;
         mouse_move_enables_dpms = true;
         key_press_enables_dpms = false;
+	disable_hyprland_logo = true;
       };
 
       dwindle = {

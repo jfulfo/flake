@@ -12,8 +12,12 @@
 
     settings.vim = {
       additionalRuntimePaths = [
-        ./nvim-custom
+        ./nvim-custom 
       ];
+
+      luaConfigRC = ''
+        require("")
+      '';
     };
   };
 }
