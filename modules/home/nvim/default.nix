@@ -1,7 +1,8 @@
-{ pkgs, 
-  ... 
-}: {
-  programs.neovim = {
-    enable = true;
-  };
+_: {
+  imports = [
+    ./languages
+    ./ui
+    ./nvf.nix
+    ./keymaps.nix
+  ];
 }
