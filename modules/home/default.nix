@@ -7,6 +7,7 @@
     ./btop.nix
     ./cava.nix
     ./codium.nix
+    ./direnv.nix
     ./discord.nix
     ./emoji.nix
     ./fastfetch

@@ -21,6 +21,7 @@
           source $HOME/.zshrc-personal
        fi
       pokeget shaymin --hide-name
+      eval "$(direnv hook zsh)"
     '';
 
     shellAliases = {
