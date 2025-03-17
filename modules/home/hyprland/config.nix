@@ -23,7 +23,7 @@ in {
         "nm-applet --indicator"
         "lxqt-policykit-agent"
         "pypr &"
-	"sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/hollow-knight.png"
+	"sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/trees.jpg"
       ];
 
       input = {

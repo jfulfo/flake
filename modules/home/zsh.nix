@@ -35,10 +35,10 @@
       cat = "bat";
       man = "BAT_THEME='default' batman";
 
-      l = "eza --icons --group-directories-first -1"; # EZA_ICON_SPACING=2
-      la = "eza --icons -a --group-directories-first -1"; # EZA_ICON_SPACING=2
+      ls = "eza --icons";
+      l = "eza --icons";
+      la = "eza --icons -a --group-directories-first";
       ll = "eza --icons --group-directories-first -1 --no-user --long";
-      ls = "eza -a --icons";
       tree = "eza --icons --tree --group-directories-first";
 
       sdn = "shutdown now";
