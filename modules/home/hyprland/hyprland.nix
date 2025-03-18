@@ -25,13 +25,13 @@
   };
   # Place Files Inside Home Directory
   home.file = {
-    "Pictures/Wallpapers" = {
+    "pictures/wallpapers" = {
       source = ../../../wallpapers;
       recursive = true;
     };
     ".config/swappy/config".text = ''
       [Default]
-      save_dir=/home/${username}/Pictures/Screenshots
+      save_dir=/home/${username}/pictures/Screenshots
       save_filename_format=swappy-%Y%m%d-%H%M%S.png
       show_panel=false
       line_size=5
@@ -57,7 +57,7 @@
       page_max_time = 10
       highlight_code = true
       highlight_style = "dracula"
-      downloads = '~/Downloads/'
+      downloads = '~/downloads/'
       underline = true
       [auth]
       [auth.certs]
