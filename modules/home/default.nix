@@ -32,6 +32,7 @@
     ./wlogout
     ./xdg.nix
     ./yazi.nix
+    ./zathura.nix
     ./zsh.nix
   ];
 }
