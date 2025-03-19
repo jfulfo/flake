@@ -20,7 +20,7 @@
        if [ -f $HOME/.zshrc-personal ]; then
           source $HOME/.zshrc-personal
        fi
-      pokeget shaymin --hide-name
+      krabby name shaymin --no-title
       eval "$(direnv hook zsh)"
       function dev () {
         nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$@"
