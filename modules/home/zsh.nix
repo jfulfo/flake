@@ -22,6 +22,10 @@
        fi
       pokeget shaymin --hide-name
       eval "$(direnv hook zsh)"
+      function dev () {
+        nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$@"
+        direnv allow
+      }
     '';
 
     shellAliases = {
@@ -30,6 +34,7 @@
       c = "code";
       y = "yazi";
 
+      # nixos
       fr = "nh os switch ~/flake --hostname ${profile}";
       fu = "nh os switch ~/flake --hostname ${profile} --update";
       ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";

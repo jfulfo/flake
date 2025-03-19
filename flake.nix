@@ -18,9 +18,17 @@
       url = "github:yazi-rs/plugins";
       flake = false;
     };
+    lix-module = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.92.0-1.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
+  outputs = {
+    nixpkgs,
+    lix-module,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     host = "cyberdeck";
     profile = "nvidia";
@@ -35,7 +43,7 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/amd];
+        modules = [./profiles/amd lix-module.nixosModules.default];
       };
       nvidia = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -45,7 +53,7 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/nvidia];
+        modules = [./profiles/nvidia lix-module.nixosModules.default];
       };
       nvidia-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -55,7 +63,7 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/nvidia-laptop];
+        modules = [./profiles/nvidia-laptop lix-module.nixosModules.default];
       };
       intel = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -65,7 +73,7 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/intel];
+        modules = [./profiles/intel lix-module.nixosModules.default];
       };
       vm = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -75,7 +83,7 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/vm];
+        modules = [./profiles/vm lix-module.nixosModules.default];
       };
       iso = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -85,7 +93,7 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/iso];
+        modules = [./profiles/iso lix-module.nixosModules.default];
       };
     };
   };
