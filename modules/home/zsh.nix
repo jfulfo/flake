@@ -49,6 +49,10 @@
       piv = "python -m venv .venv";
       psv = "source .venv/bin/activate";
 
+      # kitty
+      icat = "kitten icat";
+      d = "kitten diff";
+
       # git
       g = "lazygit";
       ga = "git add";
