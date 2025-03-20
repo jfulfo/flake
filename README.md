@@ -28,22 +28,26 @@ may search this repo for "JaKooLit" to find that code.
 
 this repo should be cloned into `~/.dotfiles`.
 
-### building this flake
+## building this flake
 
 1. ensure NixOS is installed.
 2. ensure that the optional settings `nix-config` and `flake` are enabled.
-3. edit `flake.nix` to ensure the `profile` variable corresponds to the device's
-   hardware. it should be set to one of the names of the folders in
-   `~/.dotfiles/profiles`. let `PROFILE` refer to whatever this is set to.
-4. run the following commands:
+3. edit `flake.nix`:
+   - ensure the `profile` variable corresponds to the device's hardware. it
+     should be set to one of the names of the folders in `~/.dotfiles/profiles`.
+     for example, a laptop with an nvidia gpu should have `profile` set to
+     `nvidia-laptop`.
+   - Set the `hostname`.
+4. ensure there is a folder `hosts/YOUR_HOSTNAME`. the folder `hosts/desktop`
+   can serve as a template. ensure the file `hosts/YOUR_hostname/hardware.nix`
+   is exactly the same as the file `hardware-configuration.nix` obtained when
+   the command `nixos-generate-config` is run.
+5. run the following commands:
 
 ```sh
 nix shell nixpkgs#nh
-nh os switch ~/.dotfiles --hostname PROFILE
+nh os switch ~/.dotfiles --hostname YOUR_PROFILE
 ```
-
-again, `PROFILE` should be whatever corresponds to the device's graphical
-hardware.
 
 if this flake has already been built and is currently running on the machine,
 run
@@ -60,7 +64,7 @@ fu
 
 instead.
 
-### creating an iso image
+## creating an iso image
 
 to build an iso image out of this flake, run
 

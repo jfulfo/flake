@@ -41,29 +41,11 @@
       };
     };
     maps.normal = {
-      "<leader>e" = {
+      "<C-n>" = {
         silent = true;
         noremap = true;
         action = "<cmd>Neotree toggle<CR>";
         desc = "Toggle neotree";
-      };
-      "<leader>o" = {
-        silent = true;
-        lua = true;
-        desc = "Neotree focus";
-        action =
-          /*
-          lua
-          */
-          ''
-            function()
-              if vim.bo.filetype == "neo-tree" then
-                vim.cmd.wincmd "p"
-              else
-                vim.cmd.Neotree "focus"
-              end
-            end
-          '';
       };
     };
   };

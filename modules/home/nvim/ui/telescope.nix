@@ -1,8 +1,5 @@
 {pkgs, ...}: {
   programs.nvf.settings.vim = {
-    binds.whichKey.register = {
-      "<leader>b" = "󰓩 Buffers";
-    };
     telescope = {
       enable = true;
       setupOpts = {
@@ -47,7 +44,7 @@
     };
     keymaps = [
       {
-        key = "<leader>z";
+        key = "<leader>fz";
         mode = ["n"];
         action = ":Telescope zoxide list<CR>";
         silent = true;
