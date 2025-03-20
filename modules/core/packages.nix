@@ -25,6 +25,7 @@
 
   environment.systemPackages = with pkgs; [
     appimage-run
+    brightnessctl
     cmatrix
     cowsay
     docker-compose
