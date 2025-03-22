@@ -3,9 +3,9 @@
     Coqtail = {
       package = Coqtail;
     };
-    coq-lsp-nvim = {
-      package = coq-lsp-nvim;
-      setup = "require('coq-lsp').setup {}";
-    };
+    # coq-lsp-nvim = {
+    # package = coq-lsp-nvim;
+    # setup = "require('coq-lsp').setup {}";
+    # };
   };
 }

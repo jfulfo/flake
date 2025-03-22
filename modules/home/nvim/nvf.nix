@@ -25,10 +25,14 @@
         coqPackages_8_18.mathcomp-ssreflect
         coqPackages_8_18.MenhirLib
       ];
+      python3Packages = [
+        "pynvim"
+      ];
 
       vimAlias = true;
       viAlias = true;
       withNodeJs = true;
+      withPython3 = true;
 
       options = {
         tabstop = 2;
@@ -59,6 +63,7 @@
         enable = true;
         gitsigns.enable = true;
         gitsigns.codeActions.enable = false;
+        git-conflict.enable = false;
       };
 
       lsp = {
