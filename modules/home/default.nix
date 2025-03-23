@@ -27,6 +27,7 @@
     ./starship.nix
     ./stylix.nix
     ./swaync.nix
+    ./tex.nix
     ./virtmanager.nix
     ./waybar
     ./wlogout

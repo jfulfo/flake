@@ -1,0 +1,163 @@
+\ProvidesPackage{jamiehomework}[Jamie Fulford Homework Package]
+
+% Packages
+\RequirePackage{amsmath,amssymb,amsthm,amsfonts,mathrsfs,mathtools,cancel}
+\RequirePackage{parskip}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{listings}
+\RequirePackage[shortlabels]{enumitem}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{mdframed}
+\RequirePackage{marginnote}
+
+% Formatting
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+\mdfdefinestyle{problembox}{
+    linewidth=0.5pt,
+    innertopmargin=8pt,
+    innerbottommargin=8pt,
+    innerrightmargin=8pt,
+    innerleftmargin=8pt,
+    backgroundcolor=white,
+    skipabove=\topskip,
+    skipbelow=\topskip,
+    needspace=4\baselineskip,
+    hidealllines=false,
+    splitbottomskip=6pt,
+    splittopskip=6pt,
+    nobreak=false
+}
+
+\newcommand{\problems}[2]{
+    \subsection*{Section #1}
+    \vspace{0.5em}
+    \begin{mdframed}[style=problembox]
+         #2
+    \end{mdframed}
+}
+
+\newcommand{\problem}[2]{
+    \subsection*{Problem #1}
+    \vspace{0.5em}
+    \begin{mdframed}[style=problembox]
+        #2
+    \end{mdframed}
+}
+
+\newenvironment{soln}{
+    \begin{proof}
+}{
+    \end{proof}
+}
+
+% Enumerated lists
+\setlist[enumerate]{topsep=2pt,itemsep=1pt,parsep=0pt}
+\setlist[enumerate,1]{label=\arabic*.,ref=\arabic*}
+\setlist[enumerate,2]{label=(\alph*),ref=(\alph*)}
+\setlist[enumerate,3]{label=(\roman*),ref=(\roman*)}
+
+\newenvironment{alphaenum}{\begin{enumerate}[(a)]}{\end{enumerate}}
+\newenvironment{romanenum}{\begin{enumerate}[(i)]}{\end{enumerate}}
+\newenvironment{arabicenum}{\begin{enumerate}[1.]}{\end{enumerate}}
+
+% Basic operators
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\RI}{RI}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Span}{span} % \span is a default latex command
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\divg}{div}
+\DeclareMathOperator{\curl}{curl}
+
+% Set theory
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\setst}[2]{\{#1 \mid #2\}}
+\newcommand{\union}{\cup}
+\newcommand{\intersect}{\cap}
+\newcommand{\symdiff}{\triangle}
+\newcommand{\powerset}{\mathcal{P}}
+
+% Relations
+\newcommand{\rel}{\mathrel{R}}
+\newcommand{\compose}{\circ}
+\newcommand{\inv}{^{-1}}
+\newcommand{\domain}{\mathsf{dom}}
+\newcommand{\range}{\mathsf{range}}
+
+% Logic
+\newcommand{\then}{\rightarrow}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
+\newcommand{\proves}{\vdash}
+
+% Number sets
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Zn}[1]{\Z_{#1}}
+
+% Some notation
+\newcommand{\seq}[1]{\left\{#1\right\}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+\newcommand{\V}[1]{\mathbf{#1}} % vector spaces
+\newcommand{\<}{\langle}
+
+% Theorems and proofs
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{fact}[theorem]{Fact}
+
+% Code listings
+\lstset{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    frame=single,
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=2,
+    columns=flexible
+}
+
+% Exercise numbering
+\newcounter{exNum}[section]
+\newcounter{exPart}[exNum]
+\renewcommand{\theexPart}{(\alph{exPart})}
+\newcommand{\setchnum}[1]{\setcounter{chapter}{#1}\addtocounter{chapter}{-1}}
+\newcommand{\setsnum}[1]{\setcounter{section}{#1}\addtocounter{section}{-1}}
+
+% Exercise environment with optional note and page number
+\newenvironment{exercise}{%
+    \stepcounter{exNum}%
+    \subsection*{Exercise \thesection.\arabic{exNum}}%
+    \vspace{1em}
+    \begin{mdframed}[style=problembox]%
+}{%
+    \end{mdframed}%
+}
