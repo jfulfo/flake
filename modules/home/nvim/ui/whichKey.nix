@@ -26,6 +26,8 @@
 
       # latex
       "<localleader>l" = " [L]aTeX";
+      # coq
+      "<localleader>c" = "  [C]oq";
     };
   };
 }

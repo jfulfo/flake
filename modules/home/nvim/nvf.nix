@@ -63,7 +63,6 @@
         enable = true;
         gitsigns.enable = true;
         gitsigns.codeActions.enable = false;
-        git-conflict.enable = false;
       };
 
       lsp = {

@@ -3,28 +3,28 @@
     keymaps = [
       # window navigation
       {
-        key = "<C-left>";
+        key = "<C-h>";
         mode = ["n"];
         action = "<C-w><C-h>";
         desc = "Move focus to the left window";
         silent = true;
       }
       {
-        key = "<C-right>";
+        key = "<C-l>";
         mode = ["n"];
         action = "<C-w><C-l>";
         desc = "Move focus to the right window";
         silent = true;
       }
       {
-        key = "<C-down>";
+        key = "<C-j>";
         mode = ["n"];
         action = "<C-w><C-j>";
         desc = "Move focus to the lower window";
         silent = true;
       }
       {
-        key = "<C-up>";
+        key = "<C-k>";
         mode = ["n"];
         action = "<C-w><C-k>";
         desc = "Move focus to the upper window";

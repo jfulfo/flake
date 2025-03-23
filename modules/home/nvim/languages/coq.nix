@@ -1,11 +1,13 @@
 {pkgs, ...}: {
-  programs.nvf.settings.vim.extraPlugins = with pkgs.vimPlugins; {
-    Coqtail = {
-      package = Coqtail;
+  programs.nvf.settings.vim.lazy.plugins = {
+    "Coqtail" = {
+      enabled = true;
+      package = pkgs.vimPlugins.Coqtail;
+      lazy = false;
+      ft = "v";
+      after = ''
+        vim.g.coqtail_map_prefix = "<localleader>c"
+      '';
     };
-    # coq-lsp-nvim = {
-    # package = coq-lsp-nvim;
-    # setup = "require('coq-lsp').setup {}";
-    # };
   };
 }
