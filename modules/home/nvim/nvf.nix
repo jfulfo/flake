@@ -33,6 +33,7 @@
       viAlias = true;
       withNodeJs = true;
       withPython3 = true;
+      useSystemClipboard = true;
 
       options = {
         tabstop = 2;

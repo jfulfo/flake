@@ -9,12 +9,14 @@
     ./codium.nix
     ./direnv.nix
     ./discord.nix
+    ./eddie.nix
     ./emoji.nix
     ./fastfetch
     ./gh.nix
     ./ghostty.nix
     ./git.nix
     ./gtk.nix
+    ./hyfetch.nix
     ./hyprland
     ./kitty.nix
     ./lazygit.nix

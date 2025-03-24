@@ -34,6 +34,7 @@
       v = "nvim";
       c = "code";
       y = "yazi";
+      z = "zathura";
 
       # nixos
       fr = "nh os switch ~/flake --hostname ${profile}";
