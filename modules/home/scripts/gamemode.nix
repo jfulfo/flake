@@ -5,6 +5,8 @@
 }: let
   inherit (import ../../../hosts/${host}/variables.nix) defaultWallpaper;
 in
+  # this script is sourced from JaKooLit's dotfiles:
+  # https://github.com/JaKooLit/Hyprland-Dots/blob/main/config/hypr/scripts/GameMode.sh
   pkgs.writeShellScriptBin "gamemode" ''
     HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
     if [ "$HYPRGAMEMODE" = 1 ] ; then
