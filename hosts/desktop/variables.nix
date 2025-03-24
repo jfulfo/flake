@@ -8,6 +8,7 @@
     monitor = DP-2, 2560x1440@144, auto, auto;
     monitor = DP-3, 1920x1080@144, auto-up, auto;
   ";
+  defaultWallpaper = "hollow-knight.png";
 
   # Waybar Settings
   clock24h = true;

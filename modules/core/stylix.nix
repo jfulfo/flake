@@ -2,7 +2,8 @@
   # Styling Options
   stylix = {
     enable = true;
-    image = ../../wallpapers/hollow-knight.png;
+    # not needed because wallpaper is managed by swww
+    # image = ../../wallpapers/hollow-knight.png;
     base16Scheme = {
       base00 = "1e1e2e";
       base01 = "181825";

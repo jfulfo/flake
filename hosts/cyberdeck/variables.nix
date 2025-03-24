@@ -5,6 +5,7 @@
 
   # Hyprland Settings
   extraMonitorSettings = "monitor = ,1920x1200@60,0x0,1.2";
+  defaultWallpaper = "tree.jpgs";
 
   # Waybar Settings
   clock24h = true;
