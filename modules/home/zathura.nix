@@ -3,6 +3,8 @@ _: {
     enable = true;
     options = {
       recolor = true;
+      database = "sqlite";
+      selection-clipboard = "clipboard";
     };
   };
 }

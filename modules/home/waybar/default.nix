@@ -43,6 +43,8 @@ in {
           "custom/separator#dot-line"
           "tray"
           "custom/separator#dot-line"
+          "pulseaudio"
+          "custom/separator#blank"
           "battery"
           "custom/power"
           "custom/separator#blank"
@@ -83,6 +85,47 @@ in {
             activated = " ";
             deactivated = " ";
           };
+        };
+
+        "battery" = {
+          format = "{icon} {capacity}%";
+          format-charging = "  {capacity}%";
+          format-plugged = "󱘖 {capacity}%";
+          format-alt-click = "click";
+          format-full = "{icon} Full";
+          format-alt = "{icon} {time}";
+          format-icons = [
+            "󰂎"
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          format-time = "{H}h {M}min";
+        };
+
+        pulseaudio = {
+          format = "{icon}  {volume}%";
+          format-bluetooth = "{icon} {volume}%";
+          format-bluetooth-muted = " {icon}";
+          format-muted = "󰸈";
+          format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = ["" "" ""];
+          };
+          tooltip = true;
+          tooltip-format = "{icon} {desc} | {volume}%";
         };
 
         "clock" = {

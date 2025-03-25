@@ -3,8 +3,8 @@
 /* Catppuccin Mocha */
 
 * {
-	font-family: "Iosevka Nerd Font Mono";
-	font-weight: bold;
+	font-family: "FiraCode Nerd Font Mono";
+	font-weight: 600;
 	min-height: 0;
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
 	font-size: 97%;
