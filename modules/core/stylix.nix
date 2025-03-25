@@ -37,7 +37,7 @@
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.iosevka;
-        name = "Iosevka";
+        name = "Iosevka Nerd Font";
       };
       emoji = config.stylix.fonts.monospace;
       sansSerif = {
@@ -48,10 +48,10 @@
       serif = config.stylix.fonts.sansSerif;
 
       sizes = {
-        applications = 10;
-        terminal = 12;
-        desktop = 9;
-        popups = 10;
+        applications = 12;
+        terminal = 14;
+        desktop = 11;
+        popups = 12;
       };
     };
     targets = {
