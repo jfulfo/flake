@@ -41,7 +41,7 @@
     ];
     style = ''
       * {
-        font-family: "FiraCode Nerd Font Mono", FontAwesome, sans-serif;
+        font-family: "Iosevka Nerd Font Mono", FontAwesome, sans-serif;
       	background-image: none;
       	transition: 20ms;
       }

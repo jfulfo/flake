@@ -60,7 +60,7 @@
     };
     style = ''
       * {
-        font-family: FiraCode Nerd Font Mono;
+        font-family: Iosevka Nerd Font Mono;
         font-weight: bold;
       }
       .control-center .notification-row:focus,
