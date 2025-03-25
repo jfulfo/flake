@@ -1,9 +1,14 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   # Styling Options
   stylix = {
     enable = true;
     # not needed because wallpaper is managed by swww
     # image = ../../wallpapers/hollow-knight.png;
+    # catppuccin-mocha base16Scheme
     base16Scheme = {
       base00 = "1e1e2e";
       base01 = "181825";
@@ -34,14 +39,14 @@
         package = pkgs.nerd-fonts.iosevka;
         name = "Iosevka";
       };
+      emoji = config.stylix.fonts.monospace;
       sansSerif = {
         package = pkgs.montserrat;
         name = "Montserrat";
       };
-      serif = {
-        package = pkgs.montserrat;
-        name = "Montserrat";
-      };
+      # no serifs
+      serif = config.stylix.fonts.sansSerif;
+
       sizes = {
         applications = 10;
         terminal = 12;
@@ -50,7 +55,7 @@
       };
     };
     targets = {
-      grub.enable = false;
+      grub.enable = true;
     };
   };
 }

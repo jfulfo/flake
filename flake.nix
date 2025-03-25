@@ -43,7 +43,10 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/amd lix-module.nixosModules.default];
+        modules = [
+          ./profiles/amd
+          lix-module.nixosModules.default
+        ];
       };
       nvidia = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -53,7 +56,10 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/nvidia lix-module.nixosModules.default];
+        modules = [
+          ./profiles/nvidia
+          lix-module.nixosModules.default
+        ];
       };
       nvidia-laptop = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -63,7 +69,10 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/nvidia-laptop lix-module.nixosModules.default];
+        modules = [
+          ./profiles/nvidia-laptop
+          lix-module.nixosModules.default
+        ];
       };
       intel = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -73,7 +82,10 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/intel lix-module.nixosModules.default];
+        modules = [
+          ./profiles/intel
+          lix-module.nixosModules.default
+        ];
       };
       vm = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -83,7 +95,10 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/vm lix-module.nixosModules.default];
+        modules = [
+          ./profiles/vm
+          lix-module.nixosModules.default
+        ];
       };
       iso = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -93,7 +108,10 @@
           inherit host;
           inherit profile;
         };
-        modules = [./profiles/iso lix-module.nixosModules.default];
+        modules = [
+          ./profiles/iso
+          lix-module.nixosModules.default
+        ];
       };
     };
   };

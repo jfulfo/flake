@@ -1,0 +1,390 @@
+%latex style file
+\ProvidesPackage{charliecmds}[2022/08/28 Charlie's Commands]
+
+% provides very liberal package imports.
+
+%+Package imports
+%AMS
+\RequirePackage{amsmath,amssymb,amsthm,amsfonts,amstext}
+%font packages, and other things
+\RequirePackage{mathrsfs,mathtools,bbm}
+\RequirePackage{textcomp}
+%Utility packages
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{tcolorbox}
+\RequirePackage{titlesec}
+\RequirePackage{titletoc}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{manyfoot}
+\RequirePackage{booktabs}
+\RequirePackage{listings}
+\RequirePackage{multirow}
+\RequirePackage[figuresright]{rotating}
+\RequirePackage{boxedminipage}
+\RequirePackage{wrapfig}
+\RequirePackage{contour}
+\RequirePackage{enumitem}
+\RequirePackage{etoolbox}
+\RequirePackage{todonotes}
+\RequirePackage{mleftright} % for fixing delimiters. REQUIRED.
+%TikZ
+\RequirePackage{tikz}
+\usetikzlibrary{cd}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds,patterns,intersections,shapes}
+%TikZ settings
+\tikzcdset{row sep/normal=2.4em, column sep/normal=2.4em}
+%hyperref,cleveref
+\RequirePackage[breaklinks=true,colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue,bookmarks=true,bookmarksopenlevel=2]{hyperref}
+\RequirePackage[nameinlink]{cleveref}
+%-Package Imports
+
+%+Page Structure
+%Line Spacing
+\setlength\lineskip{1\p@}
+\setlength\normallineskip{1\p@}
+\parskip=0pt
+%Page break penalties
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+%Widows and orphans are banned
+\clubpenalty 10000
+\widowpenalty 10000
+% Disable page breaks before equations, allow pagebreaks after
+% equations and discourage widow lines before equations.
+\displaywidowpenalty 100
+\predisplaypenalty   10000
+\postdisplaypenalty  0
+% Allow loose lines rather than overfull lines
+\vbadness=9999
+\tolerance=9999
+% Disallow breaking the page after a hyphenated line
+\brokenpenalty 10000
+% Hyphenation; don't split words into less than three characters
+\lefthyphenmin=3
+\righthyphenmin=3
+%-Page Structure
+
+
+%+Color Definitions
+%Yellow
+\definecolor{BgYellow}{HTML}{FFF59C}
+\definecolor{FrameYellow}{HTML}{F7A600}
+%Pink
+\definecolor{BgPink}{HTML}{EF6FA7}
+\definecolor{FramePink}{HTML}{E5446E}
+%Blue
+\definecolor{BgBlue}{HTML}{45BEE9}
+\definecolor{FrameBlue}{HTML}{31A8C9}
+%White
+\definecolor{BgWhite}{HTML}{D9D9D9}
+\definecolor{FrameWhite}{HTML}{9F9F9F}
+
+\definecolor{CBred}{HTML}{D81B60}
+\definecolor{CByellow}{HTML}{FFC107}
+\definecolor{CBblue}{HTML}{1E88E5}
+
+%-Color Definitions
+
+
+%+Minipage Environments
+% Yellow Sticky Note (YStkyNote):
+\newtcolorbox{YStkyNote}[1][]{%
+    enhanced,
+    before skip=2mm,after skip=2mm, 
+    width=0.4\textwidth, % width of the sticky note
+    boxrule=0.2mm,
+    colback=BgYellow, colframe=FrameYellow, % Colors
+    attach boxed title to top left={xshift=0cm,yshift*=0mm-\tcboxedtitleheight},
+    %varwidth boxed title=-3cm,
+    boxed title style={frame code={%
+        \path[left color=FrameYellow,right color=FrameYellow,
+        middle color=FrameYellow]
+        ([xshift=-0mm]frame.north west) -- ([xshift=0mm]frame.north east)
+        [rounded corners=0mm]-- ([xshift=0mm,yshift=0mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=0mm,yshift=0mm]frame.north west)
+        [sharp corners]-- cycle;
+        },interior engine=empty,
+    },
+    sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+    drop fuzzy shadow, % Shadow
+    fonttitle=\bfseries, 
+    title={#1},
+}
+% Blue Sticky Note (BStkyNote):
+\newtcolorbox{BStkyNote}[1][]{%
+    enhanced,
+    before skip=2mm,after skip=2mm, 
+    width=0.4\textwidth, % width of the sticky note
+    boxrule=0.2mm,
+    colback=BgBlue, colframe=FrameBlue, % Colors
+    attach boxed title to top left={
+        xshift=0cm,
+        yshift*=0mm-\tcboxedtitleheight,
+        %varwidth boxed title*=-3cm
+        },
+    boxed title style={frame code={%
+        \path[left color=FrameBlue,right color=FrameBlue,
+        middle color=FrameBlue]
+        ([xshift=-0mm]frame.north west) -- ([xshift=0mm]frame.north east)
+        [rounded corners=0mm]-- ([xshift=0mm,yshift=0mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=0mm,yshift=0mm]frame.north west)
+        [sharp corners]-- cycle;
+        },interior engine=empty,
+    },
+    sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+    drop fuzzy shadow, % Shadow
+    fonttitle=\bfseries, 
+    title={#1}
+}
+% Pink Sticky Note (PStkyNote):
+\newtcolorbox{PStkyNote}[1][]{%
+    enhanced,
+    before skip=2mm,after skip=2mm, 
+    width=0.4\textwidth, % width of the sticky note
+    boxrule=0.2mm,
+    colback=BgPink, colframe=FramePink, % Colors
+    attach boxed title to top left={
+        xshift=0cm,
+        yshift*=0mm-\tcboxedtitleheight,
+        %varwidth boxed title*=-3cm
+        },
+    boxed title style={frame code={%
+        \path[left color=FramePink,right color=FramePink,
+        middle color=FramePink]
+        ([xshift=-0mm]frame.north west) -- ([xshift=0mm]frame.north east)
+        [rounded corners=0mm]-- ([xshift=0mm,yshift=0mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=0mm,yshift=0mm]frame.north west)
+        [sharp corners]-- cycle;
+        },interior engine=empty,
+    },
+    sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+    drop fuzzy shadow, % Shadow
+    fonttitle=\bfseries, 
+    title={#1}
+}
+
+% Yellow Sticky Note (YStkyNote):
+\newtcolorbox{YStkyNoteTwo}[1][]{%
+    enhanced,
+    before skip=2mm,after skip=2mm, 
+    boxrule=0.2mm,
+    colback=BgYellow, colframe=FrameYellow, % Colors
+    attach boxed title to top left={xshift=0cm,yshift*=0mm-\tcboxedtitleheight},
+    boxed title style={frame code={%
+        \path[left color=FrameYellow,right color=FrameYellow,
+        middle color=FrameYellow]
+        ([xshift=-0mm]frame.north west) -- ([xshift=0mm]frame.north east)
+        [rounded corners=0mm]-- ([xshift=0mm,yshift=0mm]frame.north east)
+        -- (frame.south east) -- (frame.south west)
+        -- ([xshift=0mm,yshift=0mm]frame.north west)
+        [sharp corners]-- cycle;
+        },interior engine=empty,
+    },
+    sharp corners,rounded corners=southeast,arc is angular,arc=3mm,
+    drop fuzzy shadow, % Shadow
+    fonttitle=\bfseries, 
+    title={#1},
+}
+\newcommand{\marginYStkyNote}[2][]{%
+    \marginnote{%
+        \begin{YStkyNote}{#1}
+            \centering
+            \footnotesize
+            \leftskip=1em\rightskip=1em
+            #2
+        \end{YStkyNote}
+    }{}% <- Add an empty argument to prevent the title from appearing in the body
+}
+
+% Notation Box
+\newtcolorbox{notationbox}{
+    enhanced,
+    before skip=.5em,after skip=.5em,
+    width=\linewidth, % width of the box
+    boxrule=0.4mm,
+    colback=BgWhite, colframe=FrameWhite, % Colors
+    sharp corners,
+    fonttitle=\bfseries,
+    title={Notation}
+}
+
+
+%-Minipage Environments
+
+%+Math Commands and Options
+
+%\newtagform{brackets}[\ensuremath]{[}{]}
+%\usetagform{brackets}
+
+% the following code fixes \left and \right:
+%\let\originalleft\left
+%\let\originalright\right
+%\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+%\renewcommand{\right}{\aftergroup\egroup\originalright}
+%\mathopen{}\mathclose\bgroup\left
+%\aftergroup\egroup\right
+%\newcommand{\myleft}{\mathopen{}\mathclose\bgroup\left}
+%\newcommand{\myright}{\aftergroup\egroup\right}
+%\newcommand{\myemptyleft}{\mathopen{}\mathclose\bgroup}
+%\newcommand{\myemptyright}{\aftergroup\egroup}
+
+\mleftright % this is unnecessary but good.  \sin\left(x^2\right)
+
+% parentheses
+\newcommand{\paren}[1]{\ensuremath{\mleft(#1\mright)}}
+\newcommand{\bracket}[1]{\ensuremath{\mleft[#1\mright]}}
+% set builder notation {a | b}
+\newcommand{\bset}[2]{\ensuremath{\mleft\{\mspace{1mu}#1\;\middle\vert\;#2\mspace{1mu}\mright\}}}
+% norm
+\DeclarePairedDelimiterX\thenorm[1]{\mleft\lVert}{\mright\rVert}{
+\ifblank{#1}{\:\cdot\:}{#1}
+}
+\newcommand{\norm}[1]{\ensuremath{\mathord{\thenorm{#1}}}}
+% absolute value
+\DeclarePairedDelimiterX\theabs[1]{\mleft\lvert}{\mright\rvert}{
+\ifblank{#1}{\:\cdot\:}{#1}
+}
+\newcommand{\abs}[1]{\ensuremath{\mleft\lvert#1\mright\rvert}}
+\newcommand{\mdot}{\ensuremath{\:\cdot\:}}  % command to account for
+                                            % blank arguments not working
+% curly braces
+\newcommand{\curly}[1]{\ensuremath{\mleft\{#1\mright\}}}
+% vector brackets
+\DeclarePairedDelimiterX\thevect[1]{\mleft<}{\mright>}{
+\ifblank{#1}{\:\cdot\:}{#1}
+}
+\newcommand{\vect}[1]{\ensuremath{\thevect{#1}{}}}
+% floor braces
+\DeclarePairedDelimiterX\thefloor[1]{\left\lfloor}{\right\rfloor}{
+\ifblank{#1}{\:\cdot\:}{#1}
+}
+\newcommand{\floor}[1]{\ensuremath{\mathord{\thefloor{#1}}}}
+% ceiling braces
+\DeclarePairedDelimiterX\theceil[1]{\left\lceil}{\right\rceil}{
+\ifblank{#1}{\:\cdot\:}{#1}
+}
+\newcommand{\ceil}[1]{\ensuremath{\mathord{\theceil{#1}}}}
+
+%-Math Commands and Options
+
+
+%+My commands
+
+% for differentials with correct spacing after a function/integral.
+\newcommand{\diff}{\ensuremath{\operatorname{d}\!}}
+
+% for student worksheets, where they fill in the blank.
+\newcommand{\myfillin}[1]{\underline{\phantom{#1}}}
+% invisible math notation (like \phantom{}) with \mathrel spacing
+\newcommand{\phantomrel}[1][\Relbar]{\ensuremath{\mathrel{\phantom{#1}}}}
+
+% fills an hbox with arbitrary length \Relbar symbol
+\def\equalsfill{$\m@th\mathord=\mkern-7mu
+\cleaders\hbox{$\!\mathord=\!$}\hfill
+\mkern-7mu\mathord=$}
+% puts text over an arbitrary length \Relbar symbol
+\newcommand{\overeq}[1]{\stackrel{\mathrm{#1}}{\hbox{\equalsfill}}}
+% same as \overeq, but does not force roman font family
+\newcommand{\overeqn}[1]{\stackrel{#1}{\hbox{\equalsfill}}}
+%-My commands
+
+
+%+ Math Operators
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Char}{Char}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coim}{coim}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\pv}{pv}
+\DeclareMathOperator{\mult}{mult}
+
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\PDiv}{PDiv}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Supp}{Supp}
+
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\trdeg}{trdeg}
+\DeclareMathOperator{\irr}{irr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Stab}{Stab}
+\DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\Frac}{Frac}
+
+\DeclareMathOperator{\Sent}{Sent}
+\DeclareMathOperator{\Vb}{Vb}
+\DeclareMathOperator{\tp}{tp}
+\DeclareMathOperator{\Th}{Th}
+\DeclareMathOperator{\Fv}{Fv}
+\DeclareMathOperator{\Fm}{Fm}
+\DeclareMathOperator{\Sb}{Sb}
+\DeclareMathOperator{\PA}{PA}
+\DeclareMathOperator{\ACF}{ACF}
+\DeclareMathOperator{\RCF}{RCF}
+\DeclareMathOperator{\SCF}{SCF}
+\DeclareMathOperator{\acl}{acl}
+\DeclareMathOperator{\dcl}{dcl}
+\DeclareMathOperator{\cl}{cl}
+
+\DeclareMathOperator{\Prim}{Prim}
+\DeclareMathOperator{\Rec}{Rec}
+\DeclareMathOperator{\ZFC}{ZFC}
+\DeclareMathOperator{\ZF}{ZF}
+\DeclareMathOperator{\CH}{CH}
+\DeclareMathOperator{\GCH}{GCH}
+\DeclareMathOperator{\AC}{AC}
+\DeclareMathOperator{\Con}{Con}
+\DeclareMathOperator{\LC}{LC}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Or}{Or}
+\DeclareMathOperator{\ZFL}{ZFL}
+
+% categories
+\DeclareMathOperator{\Set}{\mathbf{Set}}
+\DeclareMathOperator{\Rel}{\mathbf{Rel}}
+\DeclareMathOperator{\Cat}{\mathbf{Cat}}
+\DeclareMathOperator{\Sh}{\mathbf{Sh}}
+\DeclareMathOperator{\PSh}{\mathbf{PSh}}
+\DeclareMathOperator{\Sch}{\mathbf{Sch}}
+\DeclareMathOperator{\Vect}{\mathbf{Vect}}
+\DeclareMathOperator{\Grp}{\mathbf{Grp}}
+\DeclareMathOperator{\Ab}{\mathbf{\mathfrak{A}b}}
+\DeclareMathOperator{\Top}{\mathbf{Top}}
+\DeclareMathOperator{\Htpy}{\mathbf{Htpy}}
+\DeclareMathOperator{\Diff}{\mathbf{Diff}}
+\DeclareMathOperator{\Ring}{\mathbf{Ring}}
+\DeclareMathOperator{\Poset}{\mathbf{Poset}}
+\DeclareMathOperator{\Proset}{\mathbf{Proset}}
+\DeclareMathOperator{\Ch}{\mathbf{Ch}}
+\DeclareMathOperator{\Open}{\mathbf{Open}}
+\DeclareMathOperator{\Fld}{\mathbf{Fld}}
+
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\codom}{codom}
+\DeclareMathOperator{\dom}{dom}
+%- Math Operators
+
+

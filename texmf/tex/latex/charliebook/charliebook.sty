@@ -1,0 +1,52 @@
+%latex style file
+\ProvidesPackage{charliebook}[2022/11/23 Charlie's Booklike Style]
+
+% This package is expected to be used with the document class
+% memoir.
+
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage{tcolorbox}
+\RequirePackage{titlesec}
+\RequirePackage{titletoc}
+\RequirePackage{xcolor}
+\RequirePackage{kpfonts}
+
+\setcounter{secnumdepth}{2}
+\renewcommand{\thesection}{\arabic{section}}
+
+\definecolor{CBred}{HTML}{D81B60}
+\definecolor{CByellow}{HTML}{FFC107}
+\definecolor{CBblue}{HTML}{1E88E5}
+
+% this updates the format of the chapter
+\titleformat{\chapter}[display]
+  {\normalsize\huge\color{black}}
+  {\flushleft\HUGE\color{CBred}\scshape
+  {\chaptertitlename\hspace{1ex}}
+  {\fontsize{48}{48}\selectfont\itshape\color{CBred}\thechapter}}
+  {10pt}
+  {\bfseries\huge} 
+
+% this updates the format of the section
+\titleformat{\section}[hang]{\normalfont\LARGE\bfseries\color{CBred}}{}{0em}
+    {%
+    \color{CBred}%
+    \llap{%
+    \tcbox[colback=CBred, colframe=CBred, coltext=white, on line, boxsep=0pt,
+    size=title,
+    left=7ex,
+    %top=.5ex,bottom=.5ex
+    ]{\thesection}\hskip1.5em}}
+
+% This updates the format of the subsection
+\titleformat{\subsection}[hang]{\normalfont\Large\bfseries\color{CBblue}}{}{0em}
+    {\llap{\raisebox{.5ex}{\color{CBblue}%
+    \vrule width 5ex height 0.2ex depth 0ex\hskip1.5ex}%
+    \textit{\thesubsection}\hskip1em}}
+
+% Page formatting
+%\setlength{\textwidth}{324pt}
+%\setlength{\marginparwidth}{144pt}
+%\setlength{\marginparsep}{24pt}
+%\newcommand{\marginnote}[1]{\marginpar{\footnotesize\itshape#1}}
+

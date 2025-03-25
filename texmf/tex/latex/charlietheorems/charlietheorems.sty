@@ -1,0 +1,245 @@
+%latex style file
+\ProvidesPackage{charlietheorems}[2022/08/27 Charlie's Theorems]
+
+% This package has two kinds of options (4 options total).
+% The first is whether you want your theorems numbered or not:
+% 
+% \usepackage[lecturestyle]{charlietheorems}
+% \usepackage[booklike]{charlietheorems}
+% 
+% ``lecture style'' is the default setting.
+% I don't know what will happen if you use both of the above options. Please don't.
+% 
+% You may also specify the use of a different QEDbox:
+% 
+% \usepackage[opensquare]{charlietheorems}
+% \usepackage[dashv]{charlietheorems}
+% 
+% These change the QED symbol to either the usual open square,
+% or to a backwards turnstile. The option to set your own QED symbol
+% is not compatible with this package (yet).
+
+% The following packages are loaded in abundance, because I do not care.
+\RequirePackage{amsmath,amssymb,amsthm,amsfonts}
+\RequirePackage{thmtools,mdframed}
+
+\newcommand{\charlieQED}{\ensuremath{\blacksquare}}
+\newcommand{\phs}{0.5em}
+\newcommand{\abovebelowspace}{12pt plus2pt minus1pt}
+\newcommand{\thethmstyle}{theoremstylenonum}
+\newcommand{\thesiblingstyle}{thmsiblingstylenonum}
+\newcommand{\thedefnstyle}{definitionstylenonum}
+\newcommand{\theexstyle}{definitionstylenonum}
+
+% code to run if ``lecture notes'' style is wanted
+% no numberings on any environments, spacing is tighter
+% than the spacing used for books.
+\DeclareOption{lecturestyle}{
+    \renewcommand{\phs}{0.5em}
+    \renewcommand{\abovebelowspace}{12pt plus2pt minus1pt}
+    \renewcommand{\thethmstyle}{theoremstylenonum}
+    \renewcommand{\thesiblingstyle}{thmsiblingstylenonum}
+    \renewcommand{\thedefnstyle}{definitionstylenonum}
+}
+% code to run if ``booklike'' style is wanted
+% numbered environments, good for long form content.
+\DeclareOption{booklike}{
+    \renewcommand{\phs}{.75em}
+    \renewcommand{\abovebelowspace}{16pt plus2pt minus1pt}
+    \renewcommand{\thethmstyle}{theoremstylenum}
+    \renewcommand{\thesiblingstyle}{thmsiblingstylenum}
+    \renewcommand{\thedefnstyle}{definitionstylenum}
+    \renewcommand{\theexstyle}{exercisestylenum}
+}
+% changes the qedbox to an open square. Is \blacksquare by default.
+\DeclareOption{opensquare}{
+    \renewcommand{\charlieQED}{\ensuremath{\square}}
+}
+% changes the qedbox to a backwards turnstile. For logicians.
+\DeclareOption{dashv}{
+    \renewcommand{\charlieQED}{\ensuremath{\dashv}}
+}
+\DeclareOption*{\PackageWarning{charlietheorems}{Unknown `\CurrentOption'}}
+
+\ProcessOptions\relax
+
+\renewcommand{\qedsymbol}{\charlieQED}
+
+%+ Theorem Style Declarations
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries, 
+    notebraces={}{},
+    bodyfont=\normalfont,
+    headindent=0pt,
+    postheadspace=\phs,
+]{problemstyle}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\normalfont\itshape,
+    notefont=\mdseries, 
+    notebraces={(}{)},
+    bodyfont=\normalfont,
+    postheadspace=\phs,
+    qed=\charlieQED,
+]{solutionstyle}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont\itshape,
+    postheadspace=\phs,
+    numbered=no
+]{theoremstylenonum}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont\itshape,
+    postheadspace=\phs,
+    parent=section
+]{theoremstylenum}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont\itshape,
+    postheadspace=\phs,
+    numbered=no
+]{thmsiblingstylenonum}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont\itshape,
+    postheadspace=\phs,
+    sibling=thm
+]{thmsiblingstylenum}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont,
+    postheadspace=\phs,
+    numbered=no
+]{definitionstylenonum}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont,
+    postheadspace=\phs,
+    sibling=thm
+]{definitionstylenum}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\bfseries,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont,
+    postheadspace=\phs,
+    parent=section
+]{exercisestylenum}
+\declaretheoremstyle[
+    spaceabove=\abovebelowspace, 
+    spacebelow=\abovebelowspace,
+    headfont=\itshape,
+    notefont=\mdseries,
+    notebraces={(}{)},
+    bodyfont=\normalfont,
+    postheadspace=\phs,
+]{remarkstyle}
+%- Theorem Style Declarations
+
+%+ Theorem Command Declarations
+\declaretheorem[
+    name=Theorem,
+    refname={theorem,theorems},
+    Refname={Theorem,Theorems},
+    style=\thethmstyle,
+]{thm}
+\declaretheorem[
+    name=Lemma,
+    refname={lemma,lemmata},
+    Refname={Lemma,Lemmata},
+    style=\thesiblingstyle,
+]{lemma}
+\declaretheorem[
+    name=Corollary,
+    refname={corollary,corollaries},
+    Refname={Corollary,Corollaries},
+    style=\thesiblingstyle,
+]{cor}
+\declaretheorem[
+    name=Proposition,
+    refname={proposition,propositions},
+    Refname={Proposition,Propositions},
+    style=\thesiblingstyle,
+]{prop}
+
+\declaretheorem[
+    name=Definition,
+    refname={definition,definitions},
+    Refname={Definition,Definitions},
+    style=\thedefnstyle,
+]{defn}
+
+\declaretheorem[
+    name=Procedure,
+    refname={procedure,procedures},
+    Refname={Procedure,Procedures},
+    style=problemstyle,
+    numbered=no,
+]{procedure}
+\declaretheorem[
+    name=Example,
+    refname={example,examples},
+    Refname={Example,Examples},
+    style=\theexstyle,
+]{example}
+\declaretheorem[
+    name=Exercise,
+    refname={exercise,exercises},
+    Refname={Exercise,Exercises},
+    style=\theexstyle,
+]{exercise}
+
+\declaretheorem[
+    name=Recall,
+    style=remarkstyle,
+    numbered=no,
+]{rcl}
+\declaretheorem[
+    name=Remark,
+    refname={remark,remarks},
+    Refname={Remark,Remarks},
+    style=remarkstyle,
+    numbered=no,
+]{rmk}
+\declaretheorem[
+    name=Solution,
+    style=solutionstyle,
+    numbered=no
+]{soln}
+
+%- Theorem Command Declarations
+
+\renewcommand{\theexample}{\arabic{section}.\roman{example}}
+\renewcommand{\theexercise}{\arabic{section}.\Alph{exercise}}
+

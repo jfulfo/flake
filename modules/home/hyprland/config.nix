@@ -120,7 +120,7 @@ in {
         "$modifier,W,exec,${browser}"
         "$modifier,E,exec,emopicker9000"
         "$modifier,S,exec,screenshootin"
-        "$modifier SHIFT,D,exec,webcord"
+        "$modifier SHIFT,D,exec,vesktop --enable-features=WebRTCPipeWireCapturer"
         "$modifier,O,exec,obs"
         "$modifier,C,exec,hyprpicker -a"
         "$modifier,G,exec,gamemode"

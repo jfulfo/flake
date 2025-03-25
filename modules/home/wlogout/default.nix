@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   programs.wlogout = {
     enable = true;
     layout = [
@@ -43,7 +41,7 @@
     ];
     style = ''
       * {
-        font-family: "JetBrainsMono NF", FontAwesome, sans-serif;
+        font-family: "FiraCode Nerd Font Mono", FontAwesome, sans-serif;
       	background-image: none;
       	transition: 20ms;
       }

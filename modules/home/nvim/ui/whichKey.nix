@@ -17,11 +17,12 @@
       "<leader>f" = "󰭎  [F]ind (Telescope)";
       "<leader>h" = "󰊢  Git [H]unk";
       "<leader>l" = "  [L]SP";
+      "<leader>lg" = "  [G]oto...";
       "<leader>t" = "  [T]oggle";
       "<leader>v" = "  [V]isual";
       "<leader>x" = "  Trouble";
 
-      "<leader>tt" = "  [T]oggle [T]erminal";
+      # "<leader>tt" = "  [T]oggle [T]erminal";
       "<leader>tc" = "  [T]oggle [C]omment";
 
       # latex
