@@ -1,15 +1,19 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "jfulfo";
-  gitEmail = "47907450+jfulfo@users.noreply.github.com";
+  gitUsername = "CharredLee";
+  gitEmail = "gcc2hq@virginia.edu";
 
   # Hyprland Settings
-  extraMonitorSettings = "monitor = ,1920x1200@60,0x0,1.2";
-  defaultWallpaper = "tree.jpgs";
+  extraMonitorSettings = "
+    monitor = ,1920x1080@60,auto,1
+  ";
+  extraHardwareSettings = "";
+  defaultWallpaper = "hollow-knight.png";
+
   fontSizes = {
-    applications = 12;
-    terminal = 14;
-    desktop = 11;
+    applications = 14;
+    terminal = 18;
+    desktop = 12;
     popups = 12;
   };
 

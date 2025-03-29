@@ -9,6 +9,7 @@
     browser
     terminal
     extraMonitorSettings
+    extraHardwareSettings
     defaultWallpaper
     keyboardLayout
     ;
@@ -291,6 +292,7 @@ in {
         "MOZ_ENABLE_WAYLAND, 1"
 
         # Nvidia settings
+        # TODO: also move this to host variables.
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,Nvidia"
         "__GL_VRR_ALLOWED,1"
@@ -302,6 +304,7 @@ in {
     extraConfig = "
       monitor=,preferred,auto,auto
       ${extraMonitorSettings}
+      ${extraHardwareSettings}
     ";
   };
 }

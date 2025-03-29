@@ -1,8 +1,11 @@
 {
   pkgs,
   config,
+  host,
   ...
-}: {
+}: let
+  inherit (import ../../hosts/${host}/variables.nix) fontSizes;
+in {
   # Styling Options
   stylix = {
     enable = true;
@@ -47,12 +50,7 @@
       # no serifs
       serif = config.stylix.fonts.sansSerif;
 
-      sizes = {
-        applications = 12;
-        terminal = 14;
-        desktop = 11;
-        popups = 12;
-      };
+      sizes = fontSizes;
     };
     targets = {
       grub.enable = true;
