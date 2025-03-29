@@ -4,13 +4,14 @@
   gitEmail = "47907450+jfulfo@users.noreply.github.com";
 
   # Hyprland Settings
-  extraMonitorSettings = "monitor = ,1920x1200@60,0x0,1.2";
+  extraMonitorSettings = "monitor = ,1920x1200@60,0x0,1";
+  extraHardwareSettings = "";
   defaultWallpaper = "tree.jpgs";
   fontSizes = {
-    applications = 12;
-    terminal = 14;
-    desktop = 11;
-    popups = 12;
+    applications = 14;
+    terminal = 16;
+    desktop = 13;
+    popups = 14;
   };
 
   # Waybar Settings
