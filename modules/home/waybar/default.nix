@@ -44,7 +44,6 @@ in {
           "tray"
           "custom/separator#dot-line"
           "pulseaudio"
-          "custom/separator#blank"
           "battery"
           "custom/power"
           "custom/separator#blank"

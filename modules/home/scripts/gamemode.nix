@@ -16,16 +16,16 @@ in
             keyword decoration:blur:enabled 0;\
             keyword general:gaps_in 0;\
             keyword general:gaps_out 0;\
-            keyword general:border_size 1;\
+            keyword general:border_size 0;\
             keyword decoration:rounding 0"
 
       hyprctl keyword "windowrule opacity 1 override 1 override 1 override, ^(.*)$"
-        swww kill
+        # swww kill
         pkill waybar
         notify-send "Gamemode: enabled"
         exit
     else
-      swww-daemon --format xrgb && swww img "$HOME/pictures/wallpapers/${defaultWallpaper}" &
+      # swww-daemon --format xrgb && swww img "$HOME/pictures/wallpapers/${defaultWallpaper}" &
       sleep 0.5
       hyprctl --batch "\
           keyword animations:enabled 1;\

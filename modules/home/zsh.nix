@@ -21,7 +21,7 @@
        if [ -f $HOME/.zshrc-personal ]; then
           source $HOME/.zshrc-personal
        fi
-      krabby name shaymin --no-title
+      krabby name umbreon --no-title
       eval "$(direnv hook zsh)"
       function dev () {
         nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$@"
@@ -59,6 +59,7 @@
       # kitty
       icat = "kitten icat";
       d = "kitten diff";
+      ssh = "kitten ssh";
 
       # git
       g = "lazygit";
