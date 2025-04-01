@@ -65,6 +65,7 @@
     pkg-config
     playerctl
     qbittorrent-enhanced
+    retroarch-free
     ripgrep
     socat
     unrar
