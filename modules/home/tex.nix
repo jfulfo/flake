@@ -9,7 +9,7 @@
     pkgs = [latex-custom-packages];
   };
   tex = pkgs.texlive.combine {
-    inherit (pkgs.texlive) scheme-medium;
+    inherit (pkgs.texlive) scheme-full;
     inherit texlive-custom-packages;
   };
 in {
