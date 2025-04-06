@@ -6,7 +6,7 @@
   programs = {
     rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
+      package = pkgs.rofi-wayland-unwrapped;
       extraConfig = {
         modi = "drun,filebrowser,run";
         show-icons = true;

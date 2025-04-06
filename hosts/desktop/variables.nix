@@ -5,8 +5,8 @@
 
   # Hyprland Settings
   extraMonitorSettings = "
-    monitor = DP-2, 2560x1440@144, auto, auto;
-    monitor = DP-3, 1920x1080@144, auto-up, auto;
+    monitor = DP-1, 2560x1440@144, auto, auto
+    monitor = DP-3, 1920x1080@144, auto-right, auto
   ";
   extraHardwareSettings = "
     render {

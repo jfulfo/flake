@@ -74,7 +74,6 @@
         trouble.enable = true;
         lspSignature.enable = true;
         otter-nvim.enable = true;
-        lsplines.enable = false;
         nvim-docs-view.enable = false;
         lspconfig.enable = true;
       };
