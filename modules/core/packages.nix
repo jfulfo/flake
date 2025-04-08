@@ -37,6 +37,7 @@
     docker-compose
     duf
     eza
+    fd
     ffmpeg
     file-roller
     fzf

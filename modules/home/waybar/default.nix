@@ -169,12 +169,6 @@ in {
 
         # custom modules
         # most of these are stolen from JaKooLit.
-
-        # does not work.
-        "custom/cava_mviz" = {
-          exec = "${cava_mviz}";
-          format = "{}";
-        };
         "custom/swaync" = {
           tooltip = false;
           format = "{icon} {}";
