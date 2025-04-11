@@ -23,6 +23,7 @@
     ./nano.nix
     ./nvim
     ./obsidian.nix
+    ./revolting
     ./rofi
     ./qt.nix
     ./scripts
