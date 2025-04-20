@@ -1,13 +1,17 @@
 {pkgs, ...}: {
   # Services to start
   services = {
-    libinput.enable = true;
     fstrim.enable = true;
     gvfs.enable = true;
     openssh.enable = true;
     flatpak.enable = true;
     blueman.enable = true;
 
+    libinput = {
+      enable = true;
+      mouse.accelProfile = "flat";
+      touchpad.accelProfile = "flat";
+    };
     smartd = {
       enable = false;
       autodetect = true;
