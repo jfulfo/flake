@@ -30,6 +30,7 @@ in {
     description = "${gitUsername}";
     extraGroups = [
       "adbusers"
+      "dialout"
       "docker"
       "libvirtd"
       "lp"

@@ -8,6 +8,6 @@ _: {
     ./nix.nix
     ./python.nix
     ./rust.nix
-    ./ts.nix
+    ./web.nix
   ];
 }

@@ -12,5 +12,10 @@ in {
       ".direnv"
       "shell.nix"
     ];
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 }

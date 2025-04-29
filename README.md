@@ -19,10 +19,10 @@ overhauled, including:
 
 and more. also, some code (especially that of the waybar) is directly
 taken/converted into nix from
-[JaKooLit's dotfiles](https://github.com/JaKooLit/Hyprland-Dots), specifically,
-the waybar, which is a modified version of JaKooLit's catppuccin-mocha themed
-waybar. attributions are in comments in every file where code was copied, so one
-may search this repo for "JaKooLit" to find that code.
+[JaKooLit's dotfiles](https://github.com/JaKooLit/Hyprland-Dots), which is a
+modified version of JaKooLit's catppuccin-mocha themed waybar. attributions are
+in comments in every file where code was copied, so one may search this repo for
+"JaKooLit" to find that code.
 
 ## how to use
 
