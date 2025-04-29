@@ -11,7 +11,7 @@
       TERMINAL = "kitty";
     };
 
-    initExtra = ''
+    initContent = ''
       bindkey -s '\eg' 'g\n'
       bindkey -s '\el' 'l\n'
       bindkey -s '\e.' 'cd ..\n'
