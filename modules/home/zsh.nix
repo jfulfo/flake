@@ -24,7 +24,7 @@
       krabby name umbreon --no-title
       eval "$(direnv hook zsh)"
       function dev () {
-        nix flake init --template "https://flakehub.com/f/the-nix-way/dev-templates/*#$@"
+        nix flake init --template "github:CharredLee/dev-templates#$@"
         direnv allow
       }
     '';

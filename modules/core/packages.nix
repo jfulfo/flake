@@ -31,7 +31,6 @@
 
   environment.systemPackages = with pkgs; [
     appimage-run
-    azahar
     brightnessctl
     cmatrix
     cowsay
@@ -67,6 +66,7 @@
     pkg-config
     playerctl
     qbittorrent-enhanced
+    quickemu
     retroarch-free
     ripgrep
     socat

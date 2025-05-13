@@ -6,7 +6,6 @@ in {
     userName = "${gitUsername}";
     userEmail = "${gitEmail}";
     ignores = [
-      ".envrc"
       ".env"
       ".venv"
       ".direnv"

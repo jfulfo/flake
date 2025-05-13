@@ -52,6 +52,28 @@
         desc = "Exit terminal mode";
         silent = true;
       }
+
+      # goto defn./decl.
+      {
+        key = "gd";
+        mode = ["n"];
+        action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+        desc = "goto definition";
+      }
+      {
+        key = "gD";
+        mode = ["n"];
+        action = "<cmd>lua vim.lsp.buf.declaration()<CR>";
+        desc = "goto declaration";
+      }
+
+      # close a buffer
+      {
+        key = "<leader>bd";
+        mode = ["n"];
+        action = "<cmd>bp | bd#<CR>";
+        desc = "buffer delete";
+      }
     ];
 
     autocomplete.nvim-cmp.mappings = {
