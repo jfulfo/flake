@@ -33,7 +33,6 @@
       viAlias = true;
       withNodeJs = true;
       withPython3 = true;
-      useSystemClipboard = true;
 
       options = {
         tabstop = 2;
@@ -46,6 +45,11 @@
         name = lib.mkForce "catppuccin";
         style = "mocha";
         transparent = lib.mkForce true;
+      };
+
+      clipboard = {
+        enable = true;
+        providers.wl-copy.enable = true;
       };
 
       # specific package configs
