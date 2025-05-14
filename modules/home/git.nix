@@ -7,6 +7,7 @@ in {
     userEmail = "${gitEmail}";
     ignores = [
       ".env"
+      ".envrc"
       ".venv"
       ".direnv"
       "shell.nix"
