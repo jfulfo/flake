@@ -5,7 +5,6 @@ _: {
     ./haskell.nix
     ./latex.nix
     ./clang.nix
-    ./coq.nix
     ./lean.nix
     ./markdown.nix
     ./nix.nix
