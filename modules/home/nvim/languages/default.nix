@@ -8,6 +8,7 @@ _: {
     ./lean.nix
     ./markdown.nix
     ./nix.nix
+    ./ocaml.nix
     ./python.nix
     ./rocq.nix
     ./rust.nix
