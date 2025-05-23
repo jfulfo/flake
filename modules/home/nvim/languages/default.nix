@@ -1,5 +1,8 @@
 _: {
   imports = [
+    ./asm.nix
+    ./clang.nix
+    ./haskell.nix
     ./latex.nix
     ./clang.nix
     ./coq.nix
@@ -7,6 +10,7 @@ _: {
     ./markdown.nix
     ./nix.nix
     ./python.nix
+    ./rocq.nix
     ./rust.nix
     ./web.nix
   ];
