@@ -10,7 +10,6 @@
     fstrim.enable = true;
     gvfs.enable = true;
     joycond.enable = config.variables.gaming;
-    libinput.enable = true;
     openssh.enable = true;
 
     libinput = {
