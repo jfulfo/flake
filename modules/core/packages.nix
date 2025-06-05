@@ -80,5 +80,6 @@
     v4l-utils
     virt-viewer
     wget
+    zoxide
   ];
 }
