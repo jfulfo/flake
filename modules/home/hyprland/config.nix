@@ -1,11 +1,10 @@
 {
-  host,
   username,
   config,
   ...
 }: let
   inherit
-    (import ../../../hosts/${host}/variables.nix)
+    (config.variables)
     browser
     terminal
     extraMonitorSettings

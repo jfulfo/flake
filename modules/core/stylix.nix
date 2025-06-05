@@ -1,10 +1,9 @@
 {
   pkgs,
   config,
-  host,
   ...
 }: let
-  inherit (import ../../hosts/${host}/variables.nix) fontSizes;
+  inherit (config.variables) fontSizes;
 in {
   # Styling Options
   stylix = {

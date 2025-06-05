@@ -8,9 +8,8 @@ this is a fork of [charlie's dotfiles](https://github.com/CharredLee/.dotfiles).
 > machine.
 
 the content of these dotfiles started as a fork of
-[ZaneyOS](https://gitlab.com/Zaney/zaneyos). much of the code in here is still
-explicitly from that repo. however, much of the content has been completely
-overhauled, including:
+[ZaneyOS](https://gitlab.com/Zaney/zaneyos). however, much of the content has
+been completely overhauled, including:
 
 - a wholly different [stylix](https://github.com/danth/stylix) theme, using
   [catppuccin](https://catppuccin.com/),

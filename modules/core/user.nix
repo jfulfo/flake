@@ -1,12 +1,13 @@
 {
   pkgs,
   inputs,
+  config,
   username,
   host,
   profile,
   ...
 }: let
-  inherit (import ../../hosts/${host}/variables.nix) gitUsername;
+  inherit (config.variables) gitUsername;
 in {
   imports = [inputs.home-manager.nixosModules.home-manager];
   home-manager = {
@@ -15,10 +16,13 @@ in {
     backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs username host profile;};
     users.${username} = {
+      # pass variables to home manager
+      _module.args.systemVariables = config.variables;
       imports = [./../home];
       home = {
         username = "${username}";
         homeDirectory = "/home/${username}";
+        # this need not be updated for the actual state version to be updated.
         stateVersion = "23.11";
       };
       programs.home-manager.enable = true;
@@ -37,7 +41,6 @@ in {
       "networkmanager"
       "scanner"
       "wheel"
-      "dialout"
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;

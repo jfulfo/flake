@@ -24,7 +24,6 @@ _: {
     ./nano.nix
     ./nvim
     ./obsidian.nix
-    ./revolting
     ./rofi
     ./qt.nix
     ./scripts
@@ -32,6 +31,7 @@ _: {
     ./stylix.nix
     ./swaync.nix
     ./tex.nix
+    ./variables.nix
     ./virtmanager.nix
     ./waybar
     ./wlogout

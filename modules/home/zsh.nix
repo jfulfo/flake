@@ -27,6 +27,7 @@
         nix flake init --template "github:CharredLee/dev-templates#$@"
         direnv allow
       }
+      eval "$(zoxide init zsh)"
     '';
 
     shellAliases = {

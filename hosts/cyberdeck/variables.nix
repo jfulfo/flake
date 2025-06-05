@@ -14,6 +14,10 @@
     popups = 14;
   };
 
+  gaming = false;
+  texlive = true;
+  silly = false;
+
   # Waybar Settings
   clock24h = true;
 

@@ -1,4 +1,10 @@
-{pkgs, ...}: let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  inherit (config.variables) texlive;
   latex-custom-packages = pkgs.stdenvNoCC.mkDerivation {
     name = "latex-custom-packages";
     src = ../../texmf;
@@ -13,7 +19,7 @@
     inherit texlive-custom-packages;
   };
 in {
-  home.packages = [
+  home.packages = lib.mkIf texlive [
     tex
   ];
 }

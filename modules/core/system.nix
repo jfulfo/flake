@@ -1,5 +1,5 @@
-{host, ...}: let
-  inherit (import ../../hosts/${host}/variables.nix) consoleKeyMap;
+{config, ...}: let
+  inherit (config.variables) consoleKeyMap;
 in {
   nix = {
     settings = {

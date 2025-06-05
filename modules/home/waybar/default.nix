@@ -5,8 +5,7 @@
   host,
   ...
 }: let
-  cava_mviz = ./cava_mviz.sh;
-  inherit (import ../../../hosts/${host}/variables.nix) clock24h;
+  inherit (config.variables) clock24h;
 in {
   # Configure & Theme Waybar
   programs.waybar = {

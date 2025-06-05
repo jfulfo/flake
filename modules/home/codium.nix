@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium.fhs;
+    # TODO: fix the bug where codium fails to display
+    enable = false;
+    package = pkgs.vscodium-fhs;
   };
 }
