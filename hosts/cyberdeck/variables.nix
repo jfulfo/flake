@@ -13,6 +13,7 @@
     desktop = 13;
     popups = 14;
   };
+  theme = "catppuccin-mocha";
 
   gaming = false;
   texlive = true;
