@@ -16,5 +16,6 @@
       inherit pkgs username;
     })
     (import ./web-search.nix {inherit pkgs;})
+    (import ./wallsetter-visual.nix {inherit pkgs;})
   ];
 }

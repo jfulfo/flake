@@ -1,4 +1,4 @@
-{...}: {
+_: {
   imports = [
     ./config.nix
     ./hypridle.nix

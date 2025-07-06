@@ -25,7 +25,7 @@ in
         notify-send "Gamemode: enabled"
         exit
     else
-      # swww-daemon --format xrgb && swww img "$HOME/pictures/wallpapers/${defaultWallpaper}" &
+      swww-daemon --format xrgb && swww img "$HOME/Pictures/Wallpapers/${defaultWallpaper}" &
       sleep 0.5
       hyprctl --batch "\
           keyword animations:enabled 1;\

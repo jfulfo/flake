@@ -28,6 +28,8 @@
   ";
   defaultWallpaper = "hollow-knight.png";
 
+  theme = "catppuccin-mocha";
+
   fontSizes = {
     applications = 12;
     terminal = 15;

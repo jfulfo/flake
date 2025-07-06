@@ -10,6 +10,8 @@
   extraHardwareSettings = "";
   defaultWallpaper = "hollow-knight.png";
 
+  theme = "catppuccin-mocha";
+
   fontSizes = {
     applications = 14;
     terminal = 18;

@@ -5,6 +5,8 @@
 }: let
   inherit
     (config.variables)
+    accent0
+    accent1
     browser
     terminal
     extraMonitorSettings
@@ -18,13 +20,13 @@ in {
       exec-once = [
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "killall -q swww-daemon;sleep .5 && swww-daemon &"
+        "killall -q swww-daemon;sleep .5 && swww-daemon"
         "killall -q waybar;sleep .5 && waybar"
         "killall -q swaync;sleep .5 && swaync"
         "nm-applet --indicator"
         "lxqt-policykit-agent"
         "pypr &"
-        "sleep 1.5 && swww img /home/${username}/pictures/wallpapers/${defaultWallpaper}"
+        "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/${defaultWallpaper}"
       ];
 
       input = {
@@ -57,7 +59,7 @@ in {
         gaps_out = 8;
         border_size = 2;
         resize_on_border = true;
-        "col.active_border" = "rgb(${config.lib.stylix.colors.base0E}) rgb(${config.lib.stylix.colors.base0D}) 45deg";
+        "col.active_border" = "rgb(${accent1}) rgb(${accent0}) 45deg";
         "col.inactive_border" = "rgb(${config.lib.stylix.colors.base01})";
       };
 
@@ -116,7 +118,7 @@ in {
         "$modifier SHIFT,Return,exec,pypr toggle term"
         "$modifier,D,exec,rofi-launcher"
         "$modifier SHIFT,W,exec,web-search"
-        "$modifier ALT,W,exec,wallsetter"
+        "$modifier ALT,W,exec,wallsetter-visual"
         "$modifier SHIFT,N,exec,swaync-client -rs"
         "$modifier,W,exec,${browser}"
         "$modifier,E,exec,emopicker9000"

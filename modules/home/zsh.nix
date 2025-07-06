@@ -4,11 +4,19 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "sudo"
+      ];
+    };
+
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
       BROWSER = "zen";
       TERMINAL = "kitty";
+      ZSH_THEME = "";
     };
 
     initContent = ''

@@ -13,6 +13,16 @@
     enable = true;
 
     settings.vim = {
+      luaConfigRC = {
+        qmlls-setup = ''
+          local lspconfig = require('lspconfig')
+          lspconfig.qmlls.setup({
+            cmd = {"${pkgs.qt6.qtdeclarative}/bin/qmlls", "-E"},
+            filetypes = {"qml", "qmljs"},
+            root_dir = lspconfig.util.root_pattern("*.qmlproject", "*.qml", "CMakeLists.txt", ".git"),
+          })
+        '';
+      };
       extraPackages = with pkgs; [
         fd
         fzf
