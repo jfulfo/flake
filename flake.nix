@@ -6,10 +6,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.3-2.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     nvf.url = "github:notashelf/nvf";
@@ -25,11 +21,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
-  outputs = {
-    nixpkgs,
-    lix-module,
-    ...
-  } @ inputs: let
+  outputs = {nixpkgs, ...} @ inputs: let
     system = "x86_64-linux";
     host = "cyberdeck";
     profile = "nvidia";
@@ -52,7 +44,6 @@
         };
         modules = [
           ./profiles/amd
-          lix-module.nixosModules.default
           {nixpkgs.overlays = overlays;}
         ];
       };
@@ -66,7 +57,6 @@
         };
         modules = [
           ./profiles/nvidia
-          lix-module.nixosModules.default
           {nixpkgs.overlays = overlays;}
         ];
       };
@@ -80,7 +70,6 @@
         };
         modules = [
           ./profiles/nvidia-laptop
-          lix-module.nixosModules.default
           {nixpkgs.overlays = overlays;}
         ];
       };
@@ -94,7 +83,6 @@
         };
         modules = [
           ./profiles/intel
-          lix-module.nixosModules.default
         ];
       };
       vm = nixpkgs.lib.nixosSystem {
@@ -107,7 +95,6 @@
         };
         modules = [
           ./profiles/vm
-          lix-module.nixosModules.default
           {nixpkgs.overlays = overlays;}
         ];
       };
@@ -121,7 +108,6 @@
         };
         modules = [
           ./profiles/iso
-          lix-module.nixosModules.default
           {nixpkgs.overlays = overlays;}
         ];
       };

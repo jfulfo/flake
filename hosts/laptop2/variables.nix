@@ -23,6 +23,7 @@
   clock24h = true;
 
   # variables which toggle packages
+  gamedev = false;
   gaming = false;
   texlive = false;
   silly = false;

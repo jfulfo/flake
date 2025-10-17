@@ -9,11 +9,6 @@
     monitor = DP-3, 1920x1080@144, auto-right, auto
   ";
   extraHardwareSettings = "
-    render {
-      explicit_sync = 2
-      explicit_sync_kms = 0
-    }
-
     opengl {
       nvidia_anti_flicker = 0
     }
@@ -41,6 +36,7 @@
   clock24h = true;
 
   # variables which toggle packages
+  gamedev = true;
   gaming = true;
   texlive = true;
   silly = true;

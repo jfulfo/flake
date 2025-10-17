@@ -4,6 +4,8 @@
     ./fonts.nix
     ./greetd.nix
     ./hardware.nix
+    ./ld.nix
+    # ./lix.nix
     ./network.nix
     ./nfs.nix
     ./nh.nix
