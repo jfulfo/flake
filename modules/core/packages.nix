@@ -98,6 +98,4 @@
       fortune-kind
       pipes-rs
     ];
-  };
-
 }

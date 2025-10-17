@@ -15,8 +15,9 @@
   };
   theme = "catppuccin-mocha";
 
+  gamedev = false;
   gaming = false;
-  texlive = true;
+  texlive = false;
   silly = false;
 
   # Waybar Settings
