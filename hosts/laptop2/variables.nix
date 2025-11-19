@@ -1,11 +1,12 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "CharredLee";
-  gitEmail = "31701136+CharredLee@users.noreply.github.com";
+  gitUsername = "658060";
+  gitEmail = "31701136+658060@users.noreply.github.com";
 
   # Hyprland Settings
   extraMonitorSettings = "
     monitor = ,1920x1080@60,auto,1
+    monitor = HDMI-A-1, 3840x2160@60,auto-left,1
   ";
   extraHardwareSettings = "";
   defaultWallpaper = "hollow-knight.png";
@@ -25,7 +26,7 @@
   # variables which toggle packages
   gamedev = false;
   gaming = false;
-  texlive = false;
+  texlive = true;
   silly = false;
 
   # Program Options

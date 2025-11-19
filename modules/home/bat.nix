@@ -7,7 +7,8 @@
     extraPackages = with pkgs.bat-extras; [
       batman
       batpipe
-      batgrep
+      # fails to build 2025-11-02
+      # batgrep
     ];
   };
 }

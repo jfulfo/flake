@@ -1,7 +1,7 @@
 {
   # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "CharredLee";
-  gitEmail = "31701136+CharredLee@users.noreply.github.com";
+  gitUsername = "658060";
+  gitEmail = "31701136+658060@users.noreply.github.com";
 
   # Hyprland Settings
   extraMonitorSettings = "
@@ -44,7 +44,7 @@
   # Program Options
   browser = "zen"; # Set Default Browser (google-chrome-stable for google-chrome)
   terminal = "kitty"; # Set Default System Terminal
-  keyboardLayout = "us";
+  keyboardLayout = "";
   consoleKeyMap = "us";
 
   editor = "nvim";

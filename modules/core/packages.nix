@@ -34,12 +34,19 @@
       # so `kingler name shaymin` doesn't work, and neither does `kingler name shaymin`
       # customPkgs.kingler
 
-      ardour
+      (agda.withPackages [
+        agdaPackages._1lab
+        agdaPackages.agda-categories
+        agdaPackages.cubical
+        agdaPackages.standard-library
+      ])
+      # fails to build 2025-11-15
+      # ardour
       brightnessctl
       clock-rs
       dust
-      electrum-ltc
-      element-desktop
+      # marked unsafe
+      # element-desktop
       eza
       ffmpeg
       file-roller
@@ -53,6 +60,7 @@
       libnotify
       libvirt
       lm_sensors
+      lmms
       lxqt.lxqt-policykit
       mask
       masklint
@@ -64,6 +72,7 @@
       pciutils
       picard
       playerctl
+      prusa-slicer
       qbittorrent-enhanced
       quickemu
       ripgrep
@@ -77,7 +86,6 @@
     ]
     ++ lib.optionals config.variables.gaming [
       # TODO: move retroarch to ../home, add config
-      azahar # 3ds emu
       cemu # wii u emu
       dolphin-emu # wii/gcn emu
       edopro # YGO simulator

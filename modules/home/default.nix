@@ -9,7 +9,7 @@ _: {
     ./codium.nix
     ./direnv.nix
     ./discord.nix
-    ./eddie.nix
+    ./emacs.nix
     ./emoji.nix
     ./fastfetch
     # ./foot.nix

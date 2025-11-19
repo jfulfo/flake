@@ -3,8 +3,6 @@
 in {
   programs.git = {
     enable = true;
-    userName = "${gitUsername}";
-    userEmail = "${gitEmail}";
     ignores = [
       ".env"
       ".envrc"
@@ -12,9 +10,13 @@ in {
       ".direnv"
       "shell.nix"
     ];
-    extraConfig = {
+    settings = {
       init = {
         defaultBranch = "main";
+      };
+      user = {
+        name = "${gitUsername}";
+        email = "${gitEmail}";
       };
     };
   };
