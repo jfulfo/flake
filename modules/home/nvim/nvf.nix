@@ -29,11 +29,6 @@
         git
         ripgrep
         zoxide
-        coq_8_18
-        coqPackages_8_18.coq-lsp
-        coqPackages_8_18.stdlib
-        coqPackages_8_18.mathcomp-ssreflect
-        coqPackages_8_18.MenhirLib
       ];
       python3Packages = [
         "pynvim"
