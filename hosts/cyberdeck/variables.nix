@@ -17,7 +17,7 @@
 
   gamedev = false;
   gaming = false;
-  texlive = false;
+  texlive = true;
   silly = false;
 
   # Waybar Settings
