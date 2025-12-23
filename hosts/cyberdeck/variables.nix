@@ -16,7 +16,7 @@
   theme = "catppuccin-mocha";
 
   gamedev = false;
-  gaming = false;
+  gaming = true;
   texlive = true;
   silly = false;
 
