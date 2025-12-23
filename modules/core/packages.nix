@@ -47,6 +47,7 @@
       dust
       # marked unsafe
       # element-desktop
+      edopro # YGO simulator
       eza
       ffmpeg
       file-roller
@@ -88,7 +89,6 @@
       # TODO: move retroarch to ../home, add config
       cemu # wii u emu
       dolphin-emu # wii/gcn emu
-      edopro # YGO simulator
       joycond
       joycond-cemuhook
       lumafly # HK mod manager

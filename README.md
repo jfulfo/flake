@@ -16,7 +16,7 @@ been completely overhauled, including:
 - a totally different [waybar](https://github.com/Alexays/Waybar),
 - a highly customized [nvf](https://github.com/NotAShelf/nvf) configuration,
 - development environments powered by
-  [CharredLee/dev-templates](https://github.com/CharredLee/dev-templates),
+  [658060/dev-templates](https://github.com/658060/dev-templates),
 
 and more. also, some code (especially that of the waybar) is directly
 taken/converted into nix from
@@ -32,14 +32,19 @@ this repo should be cloned into `~/.dotfiles`.
 ### building this flake
 
 1. ensure NixOS is installed.
-2. ensure that the optional settings `nix-config` and `flake` are enabled.
+2. ensure that the optional settings `nix-command` and `flake` are enabled:
+
+```nix
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+```
+
 3. edit `flake.nix`:
    - ensure the `profile` variable corresponds to the device's hardware. it
      should be set to one of the names of the folders in `~/.dotfiles/profiles`.
      for example, a laptop with an nvidia gpu should have `profile` set to
      `nvidia-laptop`.
    - Set the `hostname`.
-4. ensure there is a folder `hosts/YOUR_HOSTNAME`. the folder `hosts/desktop`
+4. ensure there is a folder `hosts/YOUR_HOSTNAME`. the folder `hosts/kamakiri`
    can serve as a template. ensure the file `hosts/YOUR_hostname/hardware.nix`
    is exactly the same as the file `hardware-configuration.nix` obtained when
    the command `nixos-generate-config` is run.

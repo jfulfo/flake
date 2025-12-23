@@ -6,6 +6,7 @@ _: {
     ./latex.nix
     ./clang.nix
     ./lean.nix
+    ./lua.nix
     ./markdown.nix
     ./nix.nix
     ./ocaml.nix
