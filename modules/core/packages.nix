@@ -54,7 +54,8 @@
       ffmpeg
       file-roller
       fzf
-      gemini-cli
+      # fails to build 2026-01-01
+      # gemini-cli
       gimp
       tuigreet
       hyprpicker
@@ -97,10 +98,12 @@
       lumafly # HK mod manager
       melonDS #nds emu
       prismlauncher # minecraft launcher
-      retroarch-free # generic emu
+      # # fails to build 2026-01-01
+      # retroarch-free # generic emu
     ]
     ++ lib.optionals config.variables.gamedev [
-      aseprite
+      # broken 2026-01-01
+      # aseprite
       godot
     ]
     ++ lib.optionals config.variables.silly [
