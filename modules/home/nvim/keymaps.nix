@@ -99,11 +99,5 @@
     terminal.toggleterm.mappings = {
       open = "<C-t>";
     };
-    treesitter.mappings.incrementalSelection = {
-      incrementByNode = "<leader>vn";
-      decrementByNode = "<leader>vm";
-      incrementByScope = "<leader>vc";
-      init = "<leader>vv";
-    };
   };
 }
