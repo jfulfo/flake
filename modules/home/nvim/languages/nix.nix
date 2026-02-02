@@ -5,7 +5,7 @@
     extraDiagnostics.enable = true;
     lsp = {
       enable = true;
-      server = "nixd";
+      servers = ["nixd"];
     };
     treesitter.enable = true;
   };

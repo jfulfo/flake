@@ -9,7 +9,6 @@
     fuse.userAllowOther = true;
     virt-manager.enable = true;
     mtr.enable = true;
-    adb.enable = true;
 
     gnupg.agent = {
       enable = true;
@@ -18,7 +17,7 @@
 
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [
+      plugins = with pkgs; [
         thunar-archive-plugin
         thunar-volman
       ];
@@ -94,10 +93,12 @@
       lumafly # HK mod manager
       melonDS #nds emu
       prismlauncher # minecraft launcher
-      retroarch-free # generic emu
+      # # fails to build 2026-01-01
+      # retroarch-free # generic emu
     ]
     ++ lib.optionals config.variables.gamedev [
-      aseprite
+      # broken 2026-01-01
+      # aseprite
       godot
     ]
     ++ lib.optionals config.variables.silly [

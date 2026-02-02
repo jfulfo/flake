@@ -74,6 +74,14 @@
         action = "<cmd>bp | bd#<CR>";
         desc = "buffer delete";
       }
+
+      # rename symbol
+      {
+        key = "<leader>lr";
+        mode = ["n"];
+        action = "<cmd>lua vim.lsp.buf.rename()<CR>";
+        desc = "rename symbol";
+      }
     ];
 
     autocomplete.nvim-cmp.mappings = {
@@ -90,12 +98,6 @@
     };
     terminal.toggleterm.mappings = {
       open = "<C-t>";
-    };
-    treesitter.mappings.incrementalSelection = {
-      incrementByNode = "<leader>vn";
-      decrementByNode = "<leader>vm";
-      incrementByScope = "<leader>vc";
-      init = "<leader>vv";
     };
   };
 }

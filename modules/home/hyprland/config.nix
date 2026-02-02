@@ -51,7 +51,6 @@ in {
       gesture = "3, horizontal, workspace";
 
       general = {
-        "$modifier" = "SUPER";
         "$term" = "kitty";
         layout = "dwindle";
         gaps_in = 6;
@@ -113,92 +112,92 @@ in {
       };
 
       bind = [
-        "$modifier,Return,exec,${terminal}"
-        "$modifier SHIFT,Return,exec,pypr toggle term"
-        "$modifier,D,exec,rofi-launcher"
-        "$modifier SHIFT,W,exec,web-search"
-        "$modifier ALT,W,exec,wallsetter-visual"
-        "$modifier SHIFT,N,exec,swaync-client -rs"
-        "$modifier,W,exec,${browser}"
-        "$modifier,E,exec,emopicker9000"
-        "$modifier,S,exec,screenshootin"
-        "$modifier SHIFT,D,exec,vesktop --enable-features=WebRTCPipeWireCapturer"
-        "$modifier,O,exec,obs"
-        "$modifier,C,exec,hyprpicker -a"
-        "$modifier,G,exec,gamemode"
-        "$modifier,T,exec,thunar"
-        "$modifier SHIFT,T,exec,pypr toggle thunar"
-        "$modifier,M,exec,pavucontrol"
-        "$modifier,Q,killactive,"
-        "$modifier,P,exec,pypr toggle volume"
-        "$modifier SHIFT,P,pseudo,"
-        "$modifier SHIFT,I,togglesplit,"
-        "$modifier,F,fullscreen,"
-        "$modifier CTRL,B,exec,pkill -SIGUSR1 waybar || waybar"
-        "$modifier CONTROL,F,togglefloating,"
-        "$modifier CONTROL,C,exit,"
+        "SUPER,Return,exec,${terminal}"
+        "SUPER SHIFT,Return,exec,pypr toggle term"
+        "SUPER,D,exec,rofi-launcher"
+        "SUPER SHIFT,W,exec,web-search"
+        "SUPER ALT,W,exec,wallsetter-visual"
+        "SUPER SHIFT,N,exec,swaync-client -rs"
+        "SUPER,W,exec,${browser}"
+        "SUPER,E,exec,emopicker9000"
+        "SUPER,S,exec,screenshootin"
+        "SUPER SHIFT,D,exec,vesktop --enable-features=WebRTCPipeWireCapturer"
+        "SUPER,O,exec,obs"
+        "SUPER,C,exec,hyprpicker -a"
+        "SUPER,G,exec,gamemode"
+        "SUPER,T,exec,thunar"
+        "SUPER SHIFT,T,exec,pypr toggle thunar"
+        "SUPER,M,exec,pavucontrol"
+        "SUPER,Q,killactive,"
+        "SUPER,P,exec,pypr toggle volume"
+        "SUPER SHIFT,P,pseudo,"
+        "SUPER SHIFT,I,togglesplit,"
+        "SUPER,F,fullscreen,"
+        "SUPER CTRL,B,exec,pkill -SIGUSR1 waybar || waybar"
+        "SUPER CONTROL,F,togglefloating,"
+        "SUPER CONTROL,C,exit,"
 
         # vim motions style window movement
-        "$modifier CONTROL,H,movewindow,l"
-        "$modifier CONTROL,L,movewindow,r"
-        "$modifier CONTROL,K,movewindow,u"
-        "$modifier CONTROL,J,movewindow,d"
-        "$modifier SHIFT,H,resizeactive, -30 0"
-        "$modifier SHIFT,L,resizeactive, 30 0"
-        "$modifier SHIFT,K,resizeactive, 0 -30"
-        "$modifier SHIFT,J,resizeactive, 0 30"
-        "$modifier,H,movefocus,l"
-        "$modifier,L,movefocus,r"
-        "$modifier,K,movefocus,u"
-        "$modifier,J,movefocus,d"
+        "SUPER CONTROL,H,movewindow,l"
+        "SUPER CONTROL,L,movewindow,r"
+        "SUPER CONTROL,K,movewindow,u"
+        "SUpER CONTROL,J,movewindow,d"
+        "SUPER SHIFT,H,resizeactive, -30 0"
+        "SUPER SHIFT,L,resizeactive, 30 0"
+        "SUPER SHIFT,K,resizeactive, 0 -30"
+        "SUPER SHIFT,J,resizeactive, 0 30"
+        "SUPER,H,movefocus,l"
+        "SUPER,L,movefocus,r"
+        "SUPER,K,movefocus,u"
+        "SUPER,J,movefocus,d"
         # arrow key counterparts
-        "$modifier CONTROL,left,movewindow,l"
-        "$modifier CONTROL,right,movewindow,r"
-        "$modifier CONTROL,up,movewindow,u"
-        "$modifier CONTROL,down,movewindow,d"
-        "$modifier SHIFT,left,resizeactive, -30 0"
-        "$modifier SHIFT,right,resizeactive, 30 0"
-        "$modifier SHIFT,up,resizeactive, 0 -30"
-        "$modifier SHIFT,down,resizeactive, 0 30"
-        "$modifier,left,movefocus,l"
-        "$modifier,right,movefocus,r"
-        "$modifier,up,movefocus,u"
-        "$modifier,down,movefocus,d"
+        "SUPER CONTROL,left,movewindow,l"
+        "SUPER CONTROL,right,movewindow,r"
+        "SUPER CONTROL,up,movewindow,u"
+        "SUPER CONTROL,down,movewindow,d"
+        "SUPER SHIFT,left,resizeactive, -30 0"
+        "SUPER SHIFT,right,resizeactive, 30 0"
+        "SUPER SHIFT,up,resizeactive, 0 -30"
+        "SUPER SHIFT,down,resizeactive, 0 30"
+        "SUPER,left,movefocus,l"
+        "SUPER,right,movefocus,r"
+        "SUPER,up,movefocus,u"
+        "SUPER,down,movefocus,d"
 
-        "$modifier,code:10,workspace,1"
-        "$modifier,code:11,workspace,2"
-        "$modifier,code:12,workspace,3"
-        "$modifier,code:13,workspace,4"
-        "$modifier,code:14,workspace,5"
-        "$modifier,code:15,workspace,6"
-        "$modifier,code:16,workspace,7"
-        "$modifier,code:17,workspace,8"
-        "$modifier,code:18,workspace,9"
-        "$modifier,code:19,workspace,10"
-        "$modifier CONTROL,SPACE,movetoworkspace,special"
-        "$modifier,SPACE,togglespecialworkspace"
-        "$modifier SHIFT,code:10,movetoworkspace,1"
-        "$modifier SHIFT,code:11,movetoworkspace,2"
-        "$modifier SHIFT,code:12,movetoworkspace,3"
-        "$modifier SHIFT,code:13,movetoworkspace,4"
-        "$modifier SHIFT,code:14,movetoworkspace,5"
-        "$modifier SHIFT,code:15,movetoworkspace,6"
-        "$modifier SHIFT,code:16,movetoworkspace,7"
-        "$modifier SHIFT,code:17,movetoworkspace,8"
-        "$modifier SHIFT,code:18,movetoworkspace,9"
-        "$modifier SHIFT,code:19,movetoworkspace,10"
-        "$modifier CONTROL,code:10,movetoworkspacesilent,1"
-        "$modifier CONTROL,code:11,movetoworkspacesilent,2"
-        "$modifier CONTROL,code:12,movetoworkspacesilent,3"
-        "$modifier CONTROL,code:13,movetoworkspacesilent,4"
-        "$modifier CONTROL,code:14,movetoworkspacesilent,5"
-        "$modifier CONTROL,code:15,movetoworkspacesilent,6"
-        "$modifier CONTROL,code:16,movetoworkspacesilent,7"
-        "$modifier CONTROL,code:17,movetoworkspacesilent,8"
-        "$modifier CONTROL,code:18,movetoworkspacesilent,9"
-        "$modifier CONTROL,code:19,movetoworkspacesilent,10"
-        "$modifier,mouse_down,workspace, e+1"
-        "$modifier,mouse_up,workspace, e-1"
+        "SUPER,code:10,workspace,1"
+        "SUPER,code:11,workspace,2"
+        "SUPER,code:12,workspace,3"
+        "SUPER,code:13,workspace,4"
+        "SUPER,code:14,workspace,5"
+        "SUPER,code:15,workspace,6"
+        "SUPER,code:16,workspace,7"
+        "SUPER,code:17,workspace,8"
+        "SUPER,code:18,workspace,9"
+        "SUPER,code:19,workspace,10"
+        "SUPER CONTROL,SPACE,movetoworkspace,special"
+        "SUPER,SPACE,togglespecialworkspace"
+        "SUPER SHIFT,code:10,movetoworkspace,1"
+        "SUPER SHIFT,code:11,movetoworkspace,2"
+        "SUPER SHIFT,code:12,movetoworkspace,3"
+        "SUPER SHIFT,code:13,movetoworkspace,4"
+        "SUPER SHIFT,code:14,movetoworkspace,5"
+        "SUPER SHIFT,code:15,movetoworkspace,6"
+        "SUPER SHIFT,code:16,movetoworkspace,7"
+        "SUPER SHIFT,code:17,movetoworkspace,8"
+        "SUPER SHIFT,code:18,movetoworkspace,9"
+        "SUPER SHIFT,code:19,movetoworkspace,10"
+        "SUPER CONTROL,code:10,movetoworkspacesilent,1"
+        "SUPER CONTROL,code:11,movetoworkspacesilent,2"
+        "SUPER CONTROL,code:12,movetoworkspacesilent,3"
+        "SUPER CONTROL,code:13,movetoworkspacesilent,4"
+        "SUPER CONTROL,code:14,movetoworkspacesilent,5"
+        "SUPER CONTROL,code:15,movetoworkspacesilent,6"
+        "SUPER CONTROL,code:16,movetoworkspacesilent,7"
+        "SUPER CONTROL,code:17,movetoworkspacesilent,8"
+        "SUPER CONTROL,code:18,movetoworkspacesilent,9"
+        "SUPER CONTROL,code:19,movetoworkspacesilent,10"
+        "SUPER,mouse_down,workspace, e+1"
+        "SUPER,mouse_up,workspace, e-1"
         "ALT,Tab,cyclenext"
         "ALT,Tab,bringactivetotop"
         ",XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
@@ -218,80 +217,8 @@ in {
       };
 
       bindm = [
-        "$modifier, mouse:272, movewindow"
-        "$modifier, mouse:273, resizewindow"
-      ];
-
-      windowrulev2 = [
-        "tag +file-manager, class:^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt)$"
-        "tag +terminal, class:^(Alacritty|kitty|kitty-dropterm)$"
-        "tag +browser, class:^(Brave-browser(-beta|-dev|-unstable)?)$"
-        "tag +browser, class:^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$"
-        "tag +browser, class:^([Gg]oogle-chrome(-beta|-dev|-unstable)?)$"
-        "tag +browser, class:^([Zz]en(-browser)?(-beta)?)$"
-        "tag +browser, class:^([Tt]horium-browser|[Cc]achy-browser)$"
-        "tag +projects, class:^(codium|codium-url-handler|VSCodium)$"
-        "tag +projects, class:^(VSCode|code-url-handler)$"
-        "tag +im, class:^([Dd]iscord|[Ww]ebCord|[Vv]esktop)$"
-        "tag +im, class:^([Ff]erdium)$"
-        "tag +im, class:^([Ww]hatsapp-for-linux)$"
-        "tag +im, class:^(org.telegram.desktop|io.github.tdesktop_x64.TDesktop)$"
-        "tag +im, class:^(teams-for-linux)$"
-        "tag +games, class:^(gamescope)$"
-        "tag +games, class:^(steam_app_\d+)$"
-        "tag +gamestore, class:^([Ss]team)$"
-        "tag +gamestore, title:^([Ll]utris)$"
-        "tag +gamestore, class:^(com.heroicgameslauncher.hgl)$"
-        "tag +settings, class:^(gnome-disks|wihotspot(-gui)?)$"
-        "tag +settings, class:^([Rr]ofi)$"
-        "tag +settings, class:^(file-roller|org.gnome.FileRoller)$"
-        "tag +settings, class:^(nm-applet|nm-connection-editor|blueman-manager)$"
-        "tag +settings, class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$"
-        "tag +settings, class:^(nwg-look|qt5ct|qt6ct|[Yy]ad)$"
-        "tag +settings, class:(xdg-desktop-portal-gtk)"
-        "move 72% 7%,title:^(Picture-in-Picture)$"
-        "center, class:^([Ff]erdium)$"
-        "center, class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$"
-        "center, class:([Tt]hunar), title:negative:(.*[Tt]hunar.*)"
-        "center, title:^(Authentication Required)$"
-        "idleinhibit fullscreen, class:^(*)$"
-        "idleinhibit fullscreen, title:^(*)$"
-        "idleinhibit fullscreen, fullscreen:1"
-        "float, tag:settings*"
-        "float, class:^([Ff]erdium)$"
-        "float, title:^(Picture-in-Picture)$"
-        "float, class:^(mpv|com.github.rafostar.Clapper)$"
-        "float, title:^(Authentication Required)$"
-        "float, class:(codium|codium-url-handler|VSCodium), title:negative:(.*codium.*|.*VSCodium.*)"
-        "float, class:^(com.heroicgameslauncher.hgl)$, title:negative:(Heroic Games Launcher)"
-        "float, class:^([Ss]team)$, title:negative:^([Ss]team)$"
-        "float, class:([Tt]hunar), title:negative:(.*[Tt]hunar.*)"
-        "float, initialTitle:(Add Folder to Workspace)"
-        "float, initialTitle:(Open Files)"
-        "float, initialTitle:(wants to save)"
-        "size 70% 60%, initialTitle:(Open Files)"
-        "size 70% 60%, initialTitle:(Add Folder to Workspace)"
-        "size 70% 70%, tag:settings*"
-        "size 60% 70%, class:^([Ff]erdium)$"
-        "opacity 1.0 1.0, tag:browser*"
-        "opacity 0.9 0.8, tag:projects*"
-        "opacity 0.94 0.86, tag:im*"
-        "opacity 0.9 0.8, tag:file-manager*"
-        "opacity 0.8 0.7, tag:terminal*"
-        "opacity 0.8 0.7, tag:settings*"
-        "opacity 0.8 0.7, class:^(gedit|org.gnome.TextEditor|mousepad)$"
-        "opacity 0.9 0.8, class:^(seahorse)$ # gnome-keyring gui"
-        "opacity 0.95 0.75, title:^(Picture-in-Picture)$"
-        "pin, title:^(Picture-in-Picture)$"
-        "keepaspectratio, title:^(Picture-in-Picture)$"
-        "noblur, tag:games*"
-        "fullscreen, tag:games*"
-
-        # workspace rules
-        "workspace 2, tag:browser"
-        "workspace 5, tag:games"
-        "workspace 5, tag:gamestore"
-        "workspace 7, tag:im"
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
       ];
 
       env = [
@@ -319,9 +246,340 @@ in {
     };
 
     extraConfig = "
-      monitor=,preferred,auto,auto
-      ${extraMonitorSettings}
-      ${extraHardwareSettings}
+windowrule {
+  name = windowrule-1
+  tag = +file-manager
+  match:class = ^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt)$
+}
+
+windowrule {
+  name = windowrule-2
+  tag = +terminal
+  match:class = ^(Alacritty|kitty|kitty-dropterm)$
+}
+
+windowrule {
+  name = windowrule-3
+  tag = +browser
+  match:class = ^(Brave-browser(-beta|-dev|-unstable)?)$
+}
+
+windowrule {
+  name = windowrule-4
+  tag = +browser
+  match:class = ^([Ff]irefox|org.mozilla.firefox|[Ff]irefox-esr)$
+}
+
+windowrule {
+  name = windowrule-5
+  tag = +browser
+  match:class = ^([Gg]oogle-chrome(-beta|-dev|-unstable)?)$
+}
+
+windowrule {
+  name = windowrule-6
+  tag = +browser
+  match:class = ^([Zz]en(-browser)?(-beta)?)$
+}
+
+windowrule {
+  name = windowrule-7
+  tag = +browser
+  match:class = ^([Tt]horium-browser|[Cc]achy-browser)$
+}
+
+windowrule {
+  name = windowrule-8
+  tag = +projects
+  match:class = ^(codium|codium-url-handler|VSCodium)$
+}
+
+windowrule {
+  name = windowrule-9
+  tag = +projects
+  match:class = ^(VSCode|code-url-handler)$
+}
+
+windowrule {
+  name = windowrule-10
+  tag = +im
+  match:class = ^([Dd]iscord|[Ww]ebCord|[Vv]esktop)$
+}
+
+windowrule {
+  name = windowrule-11
+  tag = +im
+  center = on
+  float = on
+  size = (monitor_w*0.6) (monitor_h*0.7)
+  match:class = ^([Ff]erdium)$
+}
+
+windowrule {
+  name = windowrule-12
+  tag = +im
+  match:class = ^([Ww]hatsapp-for-linux)$
+}
+
+windowrule {
+  name = windowrule-13
+  tag = +im
+  match:class = ^(org.telegram.desktop|io.github.tdesktop_x64.TDesktop)$
+}
+
+windowrule {
+  name = windowrule-14
+  tag = +im
+  match:class = ^(teams-for-linux)$
+}
+
+windowrule {
+  name = windowrule-15
+  tag = +games
+  match:class = ^(gamescope)$
+}
+
+windowrule {
+  name = windowrule-16
+  tag = +games
+  match:class = ^(steam_app_d+)$
+}
+
+windowrule {
+  name = windowrule-17
+  tag = +gamestore
+  match:class = ^([Ss]team)$
+}
+
+windowrule {
+  name = windowrule-18
+  tag = +gamestore
+  match:title = ^([Ll]utris)$
+}
+
+windowrule {
+  name = windowrule-19
+  tag = +gamestore
+  match:class = ^(com.heroicgameslauncher.hgl)$
+}
+
+windowrule {
+  name = windowrule-20
+  tag = +settings
+  match:class = ^(gnome-disks|wihotspot(-gui)?)$
+}
+
+windowrule {
+  name = windowrule-21
+  tag = +settings
+  match:class = ^([Rr]ofi)$
+}
+
+windowrule {
+  name = windowrule-22
+  tag = +settings
+  match:class = ^(file-roller|org.gnome.FileRoller)$
+}
+
+windowrule {
+  name = windowrule-23
+  tag = +settings
+  match:class = ^(nm-applet|nm-connection-editor|blueman-manager)$
+}
+
+windowrule {
+  name = windowrule-24
+  tag = +settings
+  center = on
+  match:class = ^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$
+}
+
+windowrule {
+  name = windowrule-25
+  tag = +settings
+  match:class = ^(nwg-look|qt5ct|qt6ct|[Yy]ad)$
+}
+
+windowrule {
+  name = windowrule-26
+  tag = +settings
+  match:class = (xdg-desktop-portal-gtk)
+}
+
+windowrule {
+  name = windowrule-27
+  move = ((monitor_w*0.72)) ((monitor_h*0.07))
+  float = on
+  opacity = 0.95 0.75
+  pin = on
+  keep_aspect_ratio = on
+  match:title = ^(Picture-in-Picture)$
+}
+
+windowrule {
+  name = windowrule-28
+  center = on
+  float = on
+  match:class = ([Tt]hunar)
+  match:title = negative:(.*[Tt]hunar.*)
+}
+
+windowrule {
+  name = windowrule-29
+  center = on
+  float = on
+  match:title = ^(Authentication Required)$
+}
+
+windowrule {
+  name = windowrule-30
+  idle_inhibit = fullscreen
+  match:class = ^(*)$
+}
+
+windowrule {
+  name = windowrule-31
+  idle_inhibit = fullscreen
+  match:title = ^(*)$
+}
+
+windowrule {
+  name = windowrule-32
+  idle_inhibit = fullscreen
+  match:fullscreen = 1
+}
+
+windowrule {
+  name = windowrule-33
+  float = on
+  size = (monitor_w*0.7) (monitor_h*0.7)
+  opacity = 0.8 0.7
+  match:tag = settings*
+}
+
+windowrule {
+  name = windowrule-34
+  float = on
+  match:class = ^(mpv|com.github.rafostar.Clapper)$
+}
+
+windowrule {
+  name = windowrule-35
+  float = on
+  match:class = (codium|codium-url-handler|VSCodium)
+  match:title = negative:(.*codium.*|.*VSCodium.*)
+}
+
+windowrule {
+  name = windowrule-36
+  float = on
+  match:class = ^(com.heroicgameslauncher.hgl)$
+  match:title = negative:(Heroic Games Launcher)
+}
+
+windowrule {
+  name = windowrule-37
+  float = on
+  match:class = ^([Ss]team)$
+  match:title = negative:^([Ss]team)$
+}
+
+windowrule {
+  name = windowrule-38
+  float = on
+  size = (monitor_w*0.7) (monitor_h*0.6)
+  match:initial_title = (Add Folder to Workspace)
+}
+
+windowrule {
+  name = windowrule-39
+  float = on
+  size = (monitor_w*0.7) (monitor_h*0.6)
+  match:initial_title = (Open Files)
+}
+
+windowrule {
+  name = windowrule-40
+  float = on
+  match:initial_title = (wants to save)
+}
+
+windowrule {
+  name = windowrule-41
+  opacity = 1.0 1.0
+  match:tag = browser*
+}
+
+windowrule {
+  name = windowrule-42
+  opacity = 0.9 0.8
+  match:tag = projects*
+}
+
+windowrule {
+  name = windowrule-43
+  opacity = 0.94 0.86
+  match:tag = im*
+}
+
+windowrule {
+  name = windowrule-44
+  opacity = 0.9 0.8
+  match:tag = file-manager*
+}
+
+windowrule {
+  name = windowrule-45
+  opacity = 0.8 0.7
+  match:tag = terminal*
+}
+
+windowrule {
+  name = windowrule-46
+  opacity = 0.8 0.7
+  match:class = ^(gedit|org.gnome.TextEditor|mousepad)$
+}
+
+windowrule {
+  name = windowrule-47
+  opacity = 0.9 0.8
+  match:class = ^(seahorse)$ # gnome-keyring gui
+}
+
+windowrule {
+  name = windowrule-48
+  no_blur = on
+  fullscreen = on
+  match:tag = games*
+}
+
+windowrule {
+  name = windowrule-49
+  workspace = 2
+  match:tag = browser
+}
+
+windowrule {
+  name = windowrule-50
+  workspace = 5
+  match:tag = games
+}
+
+windowrule {
+  name = windowrule-51
+  workspace = 5
+  match:tag = gamestore
+}
+
+windowrule {
+  name = windowrule-52
+  workspace = 7
+  match:tag = im
+}
+
+monitor=,preferred,auto,auto
+${extraMonitorSettings}
+${extraHardwareSettings}
     ";
   };
 }
