@@ -20,12 +20,12 @@ in
             keyword decoration:rounding 0"
 
       hyprctl keyword "windowrule opacity 1 override 1 override 1 override, ^(.*)$"
-        swww kill
+        awww kill
         pkill waybar
         notify-send "Gamemode: enabled"
         exit
     else
-      swww-daemon --format xrgb && swww img "$HOME/Pictures/Wallpapers/${defaultWallpaper}" &
+      awww-daemon --format xrgb && awww img "$HOME/Pictures/Wallpapers/${defaultWallpaper}" &
       sleep 0.5
       hyprctl --batch "\
           keyword animations:enabled 1;\
