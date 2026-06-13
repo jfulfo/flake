@@ -20,13 +20,13 @@ in {
       exec-once = [
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "killall -q swww-daemon;sleep .5 && swww-daemon"
+        "killall -q awww-daemon;sleep .5 && awww-daemon"
         "killall -q waybar;sleep .5 && waybar"
         "killall -q swaync;sleep .5 && swaync"
         "nm-applet --indicator"
         "lxqt-policykit-agent"
         "pypr &"
-        "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/${defaultWallpaper}"
+        "sleep 1.5 && awww img /home/${username}/Pictures/Wallpapers/${defaultWallpaper}"
       ];
 
       input = {

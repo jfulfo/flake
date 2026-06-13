@@ -81,18 +81,21 @@
       unzip
       usbutils
       v4l-utils
+      vlc
       wget
       zoxide
     ]
     ++ lib.optionals config.variables.gaming [
+      mgba
       # TODO: move retroarch to ../home, add config
-      cemu # wii u emu
-      dolphin-emu # wii/gcn emu
-      joycond
-      joycond-cemuhook
-      lumafly # HK mod manager
-      melonDS #nds emu
-      prismlauncher # minecraft launcher
+      #cemu # wii u emu
+      #dolphin-emu # wii/gcn emu
+      #joycond
+      #joycond-cemuhook
+      #lumafly # HK mod manager
+      #melonDS #nds emu
+      #osu-lazer-bin
+      #prismlauncher # minecraft launcher
       # # fails to build 2026-01-01
       # retroarch-free # generic emu
     ]
