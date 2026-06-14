@@ -1,6 +1,8 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   gtk = {
     iconTheme = {
       name = "Papirus-Dark";
@@ -9,7 +11,7 @@
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
-    gtk4.theme = config.gtk.theme;
+    #gtk4.theme = config.gtk.theme;
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
     };
