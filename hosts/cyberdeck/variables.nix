@@ -9,7 +9,7 @@
   defaultWallpaper = "tree.jpgs";
   fontSizes = {
     applications = 14;
-    terminal = 14;
+    terminal = 15;
     desktop = 13;
     popups = 14;
   };
