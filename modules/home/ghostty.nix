@@ -4,7 +4,7 @@ _: {
     enableBashIntegration = false;
     enableZshIntegration = true;
     settings = {
-      font-family = "JetBrainsMono Nerd Font Mono";
+      font-family = "FiraCode Nerd Font";
       font-size = 14;
       theme = "Dracula";
       background-opacity = 0.95;

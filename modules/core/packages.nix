@@ -43,6 +43,7 @@
       # fails to build 2025-11-15
       # ardour
       brightnessctl
+      chessx
       claude-code # unfortunately needed for work
       clock-rs
       dust

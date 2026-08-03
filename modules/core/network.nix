@@ -28,7 +28,7 @@
       127.0.0.1 lm.licenses.adobe.com
       127.0.0.1 na1r.services.adobe.com
       127.0.0.1 hlrcv.stage.adobe.com
-      127.0.0.1 practivate.adobe.com 
+      127.0.0.1 practivate.adobe.com
       127.0.0.1 activate.adobe.com
     '';
   };
