@@ -43,7 +43,6 @@
       # fails to build 2025-11-15
       # ardour
       brightnessctl
-      chessx
       claude-code # unfortunately needed for work
       clock-rs
       dust
@@ -62,6 +61,7 @@
       imv
       killall
       krabby
+      lc0
       libnotify
       libvirt
       lm_sensors
@@ -83,7 +83,9 @@
       qbittorrent-enhanced
       quickemu
       ripgrep
+      scid-vs-pc
       socat
+      stockfish
       unrar
       unzip
       usbutils
