@@ -1,6 +1,6 @@
 # jamie's dotfiles
 
-this is a fork of [charlie's dotfiles](https://github.com/CharredLee/.dotfiles).
+this is a fork of [charlotte's dotfiles](https://github.com/658060/.dotfiles).
 
 > [!WARNING]
 > don't use these dotfiles if you don't know what you're doing. they can brick
