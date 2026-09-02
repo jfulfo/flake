@@ -32,14 +32,8 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-<<<<<<< HEAD
-    host = "cyberdeck";
-    profile = "nvidia";
-    username = "jamie";
-=======
     inherit (nixpkgs) lib;
     pkgs = nixpkgs.legacyPackages.${system};
->>>>>>> upstream/main
 
     overlays = [
       (final: prev: {
