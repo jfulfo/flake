@@ -25,6 +25,12 @@ modified version of JaKooLit's catppuccin-mocha themed waybar. attributions are
 in comments in every file where code was copied, so one may search this repo for
 "JaKooLit" to find that code.
 
+## documentation
+
+`DOCUMENTATION.md` documents the structure of this flake for human readers.
+`CONTEXT.md` and the architecture decision records under `docs/adr/` are 
+machine-readable documentation.
+
 ## how to use
 
 this repo should be cloned into `~/.dotfiles`.
@@ -38,21 +44,29 @@ this repo should be cloned into `~/.dotfiles`.
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
-3. edit `flake.nix`:
-   - ensure the `profile` variable corresponds to the device's hardware. it
-     should be set to one of the names of the folders in `~/.dotfiles/profiles`.
-     for example, a laptop with an nvidia gpu should have `profile` set to
-     `nvidia-laptop`.
-   - Set the `hostname`.
-4. ensure there is a folder `hosts/YOUR_HOSTNAME`. the folder `hosts/kamakiri`
-   can serve as a template. ensure the file `hosts/YOUR_hostname/hardware.nix`
-   is exactly the same as the file `hardware-configuration.nix` obtained when
-   the command `nixos-generate-config` is run.
+3. ensure there is a folder `hosts/YOUR_HOSTNAME`, where `YOUR_HOSTNAME` is the
+   machine's actual hostname. the folder `hosts/kamakiri` can serve as a
+   template. `flake.nix` auto-discovers every folder under `hosts/` and builds
+   one configuration per hostname, so `flake.nix` itself is never edited. the
+   folder needs:
+   - `hardware.nix`, which is exactly the same as the file
+     `hardware-configuration.nix` obtained when the command
+     `nixos-generate-config` is run.
+   - `variables.nix`, in which:
+     - the `profile` variable corresponds to the device's hardware. it should be
+       set to one of the names of the folders in `~/.dotfiles/profiles`. for
+       example, a laptop with an nvidia gpu should have `profile` set to
+       `nvidia-laptop`.
+     - the `user` variable is set to your username.
+   - `default.nix`, which can be left exactly as the template has it.
+4. ensure the host folder is tracked by git. the flake reads tracked files only,
+   so a brand new host folder will be invisible to it until it is added with
+   `git add hosts/YOUR_HOSTNAME`.
 5. run the following commands:
 
 ```sh
 nix shell nixpkgs#nh
-nh os switch ~/.dotfiles --hostname YOUR_PROFILE
+nh os switch ~/.dotfiles --hostname $(hostname)
 ```
 
 if this flake has already been built and is currently running on the machine,

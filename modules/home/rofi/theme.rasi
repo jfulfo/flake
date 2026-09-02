@@ -1,0 +1,163 @@
+/* rofi theme (native rasi — ADR-0005).
+   Palette (@bg, @foreground, …) is generated from stylix into colors.rasi;
+   edit those in modules/home/rofi/rofi.nix. In designMode this file is symlinked
+   to the working tree — rofi relaunches per-invocation, so edits show next open. */
+@import "~/.config/rofi/colors.rasi"
+
+window {
+  transparency: "real";
+  width: 1000px;
+  location: center;
+  anchor: center;
+  fullscreen: false;
+  x-offset: 0px;
+  y-offset: 0px;
+  cursor: "default";
+  enabled: true;
+  border-radius: 15px;
+  background-color: @bg;
+}
+mainbox {
+  enabled: true;
+  spacing: 0px;
+  orientation: horizontal;
+  children: [ "imagebox", "listbox" ];
+  background-color: transparent;
+}
+imagebox {
+  padding: 20px;
+  background-color: transparent;
+  background-image: url("~/Pictures/Wallpapers/Rainnight.jpg", height);
+  orientation: vertical;
+  children: [ "inputbar", "dummy", "mode-switcher" ];
+}
+listbox {
+  spacing: 20px;
+  padding: 20px;
+  background-color: transparent;
+  orientation: vertical;
+  children: [ "message", "listview" ];
+}
+dummy {
+  background-color: transparent;
+}
+inputbar {
+  enabled: true;
+  spacing: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: @bg-alt;
+  text-color: @foreground;
+  children: [ "textbox-prompt-colon", "entry" ];
+}
+textbox-prompt-colon {
+  enabled: true;
+  expand: false;
+  str: "";
+  background-color: inherit;
+  text-color: inherit;
+}
+entry {
+  enabled: true;
+  background-color: inherit;
+  text-color: inherit;
+  cursor: text;
+  placeholder: "Search";
+  placeholder-color: inherit;
+}
+mode-switcher {
+  enabled: true;
+  spacing: 20px;
+  background-color: transparent;
+  text-color: @foreground;
+}
+button {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: @bg-alt;
+  text-color: inherit;
+  cursor: pointer;
+}
+button selected {
+  background-color: @selected;
+  text-color: @foreground;
+}
+listview {
+  enabled: true;
+  columns: 1;
+  lines: 8;
+  cycle: true;
+  dynamic: true;
+  scrollbar: false;
+  layout: vertical;
+  reverse: false;
+  fixed-height: true;
+  fixed-columns: true;
+  spacing: 10px;
+  background-color: transparent;
+  text-color: @foreground;
+  cursor: "default";
+}
+element {
+  enabled: true;
+  spacing: 15px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: transparent;
+  text-color: @text-color;
+  cursor: pointer;
+}
+element normal.normal {
+  background-color: inherit;
+  text-color: @text-color;
+}
+element normal.urgent {
+  background-color: @urgent;
+  text-color: @text-color;
+}
+element normal.active {
+  background-color: inherit;
+  text-color: @text-color;
+}
+element selected.normal {
+  background-color: @selected;
+  text-color: @foreground;
+}
+element selected.urgent {
+  background-color: @urgent;
+  text-color: @text-selected;
+}
+element selected.active {
+  background-color: @urgent;
+  text-color: @text-selected;
+}
+element-icon {
+  background-color: transparent;
+  text-color: inherit;
+  size: 36px;
+  cursor: inherit;
+}
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  cursor: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.0;
+}
+message {
+  background-color: transparent;
+}
+textbox {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: @bg-alt;
+  text-color: @foreground;
+  vertical-align: 0.5;
+  horizontal-align: 0.0;
+}
+error-message {
+  padding: 15px;
+  border-radius: 20px;
+  background-color: @bg;
+  text-color: @foreground;
+}

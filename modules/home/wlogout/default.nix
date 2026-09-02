@@ -1,4 +1,30 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  mkDesignSource,
+  ...
+}: let
+  inherit (config.lib.stylix) colors;
+  baseNames = [
+    "base00"
+    "base01"
+    "base02"
+    "base03"
+    "base04"
+    "base05"
+    "base06"
+    "base07"
+    "base08"
+    "base09"
+    "base0A"
+    "base0B"
+    "base0C"
+    "base0D"
+    "base0E"
+    "base0F"
+  ];
+  colorsCss = lib.concatMapStrings (n: "@define-color ${n} #${colors.${n}};\n") baseNames;
+in {
   programs.wlogout = {
     enable = true;
     layout = [
@@ -39,64 +65,16 @@
         "keybind" = "h";
       }
     ];
-    style = ''
-      * {
-        font-family: "Iosevka Nerd Font Mono", FontAwesome, sans-serif;
-      	background-image: none;
-      	transition: 20ms;
-      }
-      window {
-      	background-color: rgba(12, 12, 12, 0.1);
-      }
-      button {
-      	color: #${config.lib.stylix.colors.base05};
-        font-size:20px;
-        background-repeat: no-repeat;
-      	background-position: center;
-      	background-size: 25%;
-      	border-style: solid;
-      	background-color: rgba(12, 12, 12, 0.3);
-      	border: 3px solid #${config.lib.stylix.colors.base05};
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-      button:focus,
-      button:active,
-      button:hover {
-        color: #${config.lib.stylix.colors.base0B};
-        background-color: rgba(12, 12, 12, 0.5);
-        border: 3px solid #${config.lib.stylix.colors.base0B};
-      }
-      #logout {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/logout.png"));
-      }
-      #suspend {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/suspend.png"));
-      }
-      #shutdown {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/shutdown.png"));
-      }
-      #reboot {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/reboot.png"));
-      }
-      #lock {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/lock.png"));
-      }
-      #hibernate {
-      	margin: 10px;
-      	border-radius: 20px;
-      	background-image: image(url("icons/hibernate.png"));
-      }
-    '';
+  };
+
+  # Generated palette (pure). Native style.css is symlinked to the working tree in
+  # designMode; wlogout relaunches per-invocation so edits show on next open.
+  xdg.configFile = {
+    "wlogout/colors.css".text = colorsCss;
+    "wlogout/style.css".source = mkDesignSource {
+      repo = "modules/home/wlogout/style.css";
+      store = ./style.css;
+    };
   };
   home.file.".config/wlogout/icons" = {
     source = ./icons;

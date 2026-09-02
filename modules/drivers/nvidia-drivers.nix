@@ -14,6 +14,39 @@ in
   };
 
   config = mkIf cfg.enable {
+    # nixpkgs lc0 hard-disables cuda (-Dplain_cuda=false, no cudaSupport knob),
+    # so rebuild it with the cuda backend on nvidia hosts. native_cuda stays
+    # false: the sandbox has no GPU, so nvcc falls back to -arch=all-major.
+    # cudnn_include/cudnn_libdirs are lc0's option names for plain cuda paths
+    # too; nvcc's kernel compiles only see -I flags from cudnn_include.
+    nixpkgs.overlays = [
+      (final: prev: {
+        lc0 = prev.lc0.overrideAttrs (old: {
+          nativeBuildInputs =
+            old.nativeBuildInputs
+            ++ [
+              final.cudaPackages.cuda_nvcc
+              final.autoAddDriverRunpath
+            ];
+          buildInputs =
+            old.buildInputs
+            ++ [
+              final.cudaPackages.cuda_cudart
+              final.cudaPackages.libcublas
+            ];
+          mesonFlags =
+            lib.remove "-Dplain_cuda=false" old.mesonFlags
+            ++ [
+              "-Dplain_cuda=true"
+              # nvcc's include dir carries crt/host_defines.h, which cudart's
+              # headers include but strictDeps hides from g++.
+              "-Dcudnn_include=${lib.getOutput "include" final.cudaPackages.cuda_cudart}/include,${lib.getOutput "include" final.cudaPackages.libcublas}/include,${final.cudaPackages.cuda_nvcc}/include"
+              "-Dcudnn_libdirs=${lib.getLib final.cudaPackages.cuda_cudart}/lib,${lib.getLib final.cudaPackages.libcublas}/lib"
+            ];
+        });
+      })
+    ];
+
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
       # Modesetting is required.

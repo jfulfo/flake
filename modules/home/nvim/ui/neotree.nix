@@ -40,13 +40,15 @@
         };
       };
     };
-    maps.normal = {
-      "<C-n>" = {
+    keymaps = [
+      {
+        key = "<C-n>";
+        mode = "n";
         silent = true;
         noremap = true;
         action = "<cmd>Neotree toggle<CR>";
         desc = "Toggle neotree";
-      };
-    };
+      }
+    ];
   };
 }

@@ -10,7 +10,22 @@
     fstrim.enable = true;
     gvfs.enable = true;
     joycond.enable = config.variables.gaming;
-    openssh.enable = true;
+    libinput.enable = true;
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PermitRootLogin = "no";
+      };
+    };
+
+    # wireguard mesh between hosts; `sudo tailscale up` once per machine
+    tailscale = {
+      enable = true;
+      openFirewall = true;
+    };
+    resolved.enable = true;
 
     libinput = {
       enable = true;

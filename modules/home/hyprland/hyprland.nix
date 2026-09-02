@@ -22,6 +22,7 @@
     };
     # enableNvidiaPatches = false;
     systemd.enable = true;
+    configType = "lua";
   };
   # Place Files Inside Home Directory
   home.file = {

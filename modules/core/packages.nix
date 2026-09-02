@@ -57,6 +57,7 @@
       imv
       killall
       krabby
+      lc0
       libnotify
       libvirt
       lm_sensors
@@ -68,6 +69,8 @@
       mullvad-vpn
       nicotine-plus
       obs-studio
+      opencode # for work
+      outfox
       pavucontrol
       pciutils
       picard
@@ -76,7 +79,9 @@
       qbittorrent-enhanced
       quickemu
       ripgrep
+      scid-vs-pc
       socat
+      stockfish
       unrar
       unzip
       usbutils
@@ -88,14 +93,14 @@
     ++ lib.optionals config.variables.gaming [
       mgba
       # TODO: move retroarch to ../home, add config
-      #cemu # wii u emu
-      #dolphin-emu # wii/gcn emu
-      #joycond
-      #joycond-cemuhook
-      #lumafly # HK mod manager
-      #melonDS #nds emu
-      #osu-lazer-bin
-      #prismlauncher # minecraft launcher
+      cemu # wii u emu
+      dolphin-emu # wii/gcn emu
+      joycond
+      joycond-cemuhook
+      lumafly # HK mod manager
+      melonds #nds emu
+      osu-lazer-bin
+      prismlauncher # minecraft launcher
       # # fails to build 2026-01-01
       # retroarch-free # generic emu
     ]
