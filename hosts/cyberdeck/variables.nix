@@ -28,7 +28,7 @@
   # (the upstream default), so SUPER + W ran a command that did not exist.
   browser = "zen-beta";
 
-  defaultWallpaper = "forest.png";
+  defaultWallpaper = "trees.jpg";
   dotfilesPath = "/home/holly/flake"; # TODO put in variable
 
   gaming = true;
