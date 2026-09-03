@@ -1,0 +1,16 @@
+# Recipients allowed to decrypt secrets/*.yaml.
+#   holly     — derived from ~/.ssh/id_ed25519.pub  (ssh-to-age -i <pubkey>)
+#   cyberdeck — derived from /etc/ssh/ssh_host_ed25519_key.pub, so the machine
+#               can decrypt unattended during activation
+# After adding a key here, re-encrypt with:
+#   sops updatekeys secrets/secrets.yaml
+keys:
+  - &holly     age1k3epyk506e99dlpxwy7jh3cahvmd76kgkge9tgvr9kqyzvjsj4vsv2kg8d
+  - &cyberdeck age1fuf2wl80s0qx923pzd5edctau3pmhz3pz2ylgsth0flfwr66044syavn6k
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml$
+    key_groups:
+      - age:
+          - *holly
+          - *cyberdeck
