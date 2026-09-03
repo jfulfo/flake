@@ -156,6 +156,7 @@ local keybinds = {
   { k = "SUPER + E",              d = hl.dsp.exec_cmd("emopicker9000"),                                  h = "Emoji picker" },
   { k = "SUPER + S",              d = hl.dsp.exec_cmd("screenshootin"),                                  h = "Screenshot" },
   { k = "SUPER + SHIFT + D",      d = hl.dsp.exec_cmd("vesktop --enable-features=WebRTCPipeWireCapturer"), h = "Discord" },
+  { k = "SUPER + V",              d = hl.dsp.exec_cmd("code"),                                           h = "Editor (vscode)" },
   { k = "SUPER + O",              d = hl.dsp.exec_cmd("obs"),                                            h = "OBS" },
   { k = "SUPER + C",              d = hl.dsp.exec_cmd("hyprpicker -a"),                                  h = "Color picker" },
   { k = "SUPER + G",              d = hl.dsp.exec_cmd("gamemode"),                                       h = "Toggle gamemode" },
@@ -312,7 +313,7 @@ hl.window_rule({ name = "windowrule-7",  tag = "+browser",
 hl.window_rule({ name = "windowrule-8",  tag = "+projects",
   match = { class = "^(codium|codium-url-handler|VSCodium)$" } })
 hl.window_rule({ name = "windowrule-9",  tag = "+projects",
-  match = { class = "^(VSCode|code-url-handler)$" } })
+  match = { class = "^([Cc]ode|VSCode|code-url-handler)$" } })
 hl.window_rule({ name = "windowrule-10", tag = "+im",
   match = { class = "^([Dd]iscord|[Ww]ebCord|[Vv]esktop)$" } })
 hl.window_rule({ name = "windowrule-11", tag = "+im", center = true, float = true,
@@ -415,3 +416,4 @@ hl.window_rule({ name = "windowrule-49", workspace = 2, match = { tag = "browser
 hl.window_rule({ name = "windowrule-50", workspace = 5, match = { tag = "games"     } })
 hl.window_rule({ name = "windowrule-51", workspace = 5, match = { tag = "gamestore" } })
 hl.window_rule({ name = "windowrule-52", workspace = 7, match = { tag = "im"        } })
+hl.window_rule({ name = "windowrule-53", workspace = 3, match = { tag = "projects"  } })
