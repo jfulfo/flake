@@ -109,6 +109,12 @@
         lualine = {
           enable = true;
           theme = lib.mkForce "catppuccin";
+          # renamed from vim.ui.breadcrumbs.* in nvf; kept explicit rather than
+          # relying on the defaults staying false.
+          integrations.breadcrumbs = {
+            nvim-navic.enable = false;
+            navbuddy.enable = false;
+          };
         };
       };
 
@@ -160,10 +166,6 @@
         noice.enable = true;
         colorizer.enable = true;
         illuminate.enable = true;
-        breadcrumbs = {
-          enable = false;
-          navbuddy.enable = false;
-        };
         smartcolumn = {
           enable = false;
         };

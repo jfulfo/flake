@@ -47,6 +47,20 @@ in
       })
     ];
 
+    # Session env for nvidia. These used to be set unconditionally in
+    # modules/home/hyprland/config.lua, which is shared by every profile, so the
+    # amd host was also told to load the nvidia VA-API driver: `vainfo` failed
+    # with va_openDriver() returning -1 and all video decode fell back to
+    # software. Gated on drivers.nvidia.enable, they only reach nvidia hosts.
+    # (WLR_NO_HARDWARE_CURSORS / WLR_DRM_NO_ATOMIC are deliberately not carried
+    # over: hyprland replaced wlroots with aquamarine in 0.41 and ignores both.
+    # The equivalent is the `cursor:no_hardware_cursors` config option.)
+    environment.sessionVariables = {
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      __GL_VRR_ALLOWED = "1";
+    };
+
     services.xserver.videoDrivers = [ "nvidia" ];
     hardware.nvidia = {
       # Modesetting is required.

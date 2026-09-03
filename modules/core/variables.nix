@@ -163,8 +163,13 @@ in {
         };
         keyboardLayout = mkOption {
           type = types.str;
+          default = "us";
+          description = "xkb keyboard layout, used for both X11 and hyprland's kb_layout.";
+        };
+        keyboardVariant = mkOption {
+          type = types.str;
           default = "";
-          description = "X11/console keyboard layout (empty for default).";
+          description = "xkb keyboard variant (empty for none), e.g. \"colemak\" for layout \"us\".";
         };
         consoleKeyMap = mkOption {
           type = types.str;

@@ -15,6 +15,7 @@
     extraHardwareSettings
     defaultWallpaper
     keyboardLayout
+    keyboardVariant
     ;
 
   toLua = lib.generators.toLua {};
@@ -32,7 +33,8 @@
       inactiveBorder = "rgba(${config.lib.stylix.colors.base01}ff)",
       browser        = ${toLua browser},
       terminal       = ${toLua terminal},
-      kbVariant      = ${toLua keyboardLayout},
+      kbLayout       = ${toLua keyboardLayout},
+      kbVariant      = ${toLua keyboardVariant},
       wallpaper      = "/home/${username}/pictures/wallpapers/${defaultWallpaper}",
       monitors = {
     ${lib.concatMapStrings (m: "    { output = ${toLua m.output}, mode = ${toLua m.mode}, position = ${toLua m.position}, scale = ${m.scale} },\n") extraMonitorSettings}  },

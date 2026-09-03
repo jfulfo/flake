@@ -28,6 +28,11 @@ hl.on("hyprland.start", function()
 end)
 
 -- ── Environment variables ─────────────────────────────────────────────────
+-- Driver-specific vars do NOT belong here: this file is shared by every
+-- profile. Nvidia's live in modules/drivers/nvidia-drivers.nix, gated on
+-- drivers.nvidia.enable. Setting LIBVA_DRIVER_NAME=nvidia unconditionally
+-- broke VA-API on the amd profile (va_openDriver() returned -1, so every
+-- video fell back to software decode).
 hl.env("NIXOS_OZONE_WL",                    "1")
 hl.env("NIXPKGS_ALLOW_UNFREE",              "1")
 hl.env("XDG_CURRENT_DESKTOP",               "Hyprland")
@@ -40,12 +45,6 @@ hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR",       "1")
 hl.env("SDL_VIDEODRIVER",                   "x11")
 hl.env("MOZ_ENABLE_WAYLAND",                "1")
--- Nvidia
-hl.env("LIBVA_DRIVER_NAME",                 "nvidia")
-hl.env("__GLX_VENDOR_LIBRARY_NAME",         "Nvidia")
-hl.env("__GL_VRR_ALLOWED",                  "1")
-hl.env("WLR_NO_HARDWARE_CURSORS",           "1")
-hl.env("WLR_DRM_NO_ATOMIC",                 "1")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT",      "auto")
 
 -- ── Monitors ─────────────────────────────────────────────────────────────
@@ -68,7 +67,7 @@ hl.config({
     },
   },
   input = {
-    kb_layout  = "us",
+    kb_layout  = vars.kbLayout,
     kb_variant = vars.kbVariant,
     kb_options = "grp:alt_caps_toggle,caps:super",
     numlock_by_default = true,
