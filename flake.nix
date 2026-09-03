@@ -6,8 +6,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    # `github:NixOS/nixpkgs` is master, which is not gated on Hydra: it regularly
+    # carries packages that no cache has and that do not build (e.g. pyqt5, pulled
+    # in by asymptote -> texlive scheme-full). nixos-unstable only advances after
+    # the channel tests pass, so prebuilt substitutes exist.
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     nvf.url = "github:notashelf/nvf";
     quickshell = {

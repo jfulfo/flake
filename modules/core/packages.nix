@@ -61,7 +61,7 @@
       libnotify
       libvirt
       lm_sensors
-      lmms
+      #lmms
       lxqt.lxqt-policykit
       mask
       masklint
@@ -73,7 +73,7 @@
       outfox
       pavucontrol
       pciutils
-      picard
+      #picard
       playerctl
       prusa-slicer
       qbittorrent-enhanced

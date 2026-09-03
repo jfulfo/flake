@@ -33,7 +33,7 @@
       browser        = ${toLua browser},
       terminal       = ${toLua terminal},
       kbVariant      = ${toLua keyboardLayout},
-      wallpaper      = "/home/${username}/Pictures/Wallpapers/${defaultWallpaper}",
+      wallpaper      = "/home/${username}/pictures/wallpapers/${defaultWallpaper}",
       monitors = {
     ${lib.concatMapStrings (m: "    { output = ${toLua m.output}, mode = ${toLua m.mode}, position = ${toLua m.position}, scale = ${m.scale} },\n") extraMonitorSettings}  },
       hardware = ${toLua extraHardwareSettings},

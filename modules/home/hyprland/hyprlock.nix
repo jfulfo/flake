@@ -4,6 +4,7 @@
   ...
 }: let
   inherit (config.lib.stylix) colors;
+  inherit (config.variables) defaultWallpaper;
 in {
   programs.hyprlock = {
     enable = true;
@@ -16,7 +17,7 @@ in {
       };
       background = [
         {
-          path = "/home/${username}/pictures/wallpapers/beautifulmountainscape.jpg";
+          path = "/home/${username}/pictures/wallpapers/${defaultWallpaper}";
           blur_passes = 3;
           blur_size = 8;
         }

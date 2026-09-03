@@ -27,11 +27,6 @@
     };
     resolved.enable = true;
 
-    libinput = {
-      enable = true;
-      mouse.accelProfile = "flat";
-      touchpad.accelProfile = "flat";
-    };
     smartd = {
       enable = false;
       autodetect = true;
@@ -57,11 +52,28 @@
     };
   };
 
+  # `flatpak remote-add` fetches the .flatpakrepo over the network even when the
+  # remote already exists, so this unit needs working DNS. With no ordering it
+  # raced NetworkManager at boot, and during `switch-to-configuration` it runs
+  # while NetworkManager is being restarted underneath it — network-online.target
+  # is already active there, so After= alone does not help, hence the retry.
+  # A transient network blip must not fail a whole system activation, so give up
+  # quietly after a few tries; the unit runs again on the next boot.
   systemd.services.flatpak-repo = {
     wantedBy = ["multi-user.target"];
+    wants = ["network-online.target"];
+    after = ["network-online.target"];
     path = [pkgs.flatpak];
+    serviceConfig.Type = "oneshot";
     script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+      for attempt in 1 2 3 4 5; do
+        if flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo; then
+          exit 0
+        fi
+        echo "flatpak-repo: attempt $attempt could not reach flathub, retrying in 5s" >&2
+        sleep 5
+      done
+      echo "flatpak-repo: giving up; flathub will be registered on the next boot" >&2
     '';
   };
 }

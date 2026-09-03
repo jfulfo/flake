@@ -1,6 +1,6 @@
 {pkgs, ...}:
 pkgs.writeShellScriptBin "wallsetter-visual" ''
-  WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+  WALLPAPER_DIR="$HOME/pictures/wallpapers"
 
   # Check if directory exists
   if [ ! -d "$WALLPAPER_DIR" ]; then

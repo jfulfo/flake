@@ -6,7 +6,7 @@
   '';
 
   imv-wallpaper-selector = pkgs.writeShellScriptBin "imv-wallpaper-selector" ''
-    exec ${pkgs.imv}/bin/imv -r "$HOME/Pictures/Wallpapers" \
+    exec ${pkgs.imv}/bin/imv -r "$HOME/pictures/wallpapers" \
       -c "bind x exec ${set-wallpaper}/bin/set-wallpaper \"\$imv_current_file\"" \
       -c "bind <Return> exec ${set-wallpaper}/bin/set-wallpaper \"\$imv_current_file\"; quit" \
       -w "Wallpaper Selector"

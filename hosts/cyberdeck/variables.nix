@@ -9,7 +9,12 @@
 
   # Only keys that differ from the modules/core/variables.nix defaults.
   extraMonitorSettings = [
-    { output = "";         mode = "1920x1200@60";  position = "auto";      scale = "1"; }
+    {
+      output = "";
+      mode = "1920x1200@60";
+      position = "auto";
+      scale = "1";
+    }
   ];
 
   fontSizes = {
@@ -19,10 +24,11 @@
     popups = 12;
   };
 
-  dotfilesPath = "/home/${config.user}/flake";
+  defaultWallpaper = "forest.png";
+  dotfilesPath = "/home/holly/flake"; # TODO put in variable
 
-  gaming = true;
-  texlive = true;
+  gaming = false;
+  texlive = false;
 
   enableNFS = true;
 }
