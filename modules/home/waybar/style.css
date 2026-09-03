@@ -256,6 +256,16 @@ window#waybar.empty #window {
   color: @sapphire;
 }
 
+/* the `pulseaudio#microphone` instance — waybar renders the `#name` suffix as a
+   style class, so this narrows to the mic without touching the speaker. */
+#pulseaudio.microphone {
+  color: @teal;
+}
+
+#pulseaudio.microphone.source-muted {
+  color: @red;
+}
+
 #pulseaudio.bluetooth {
   color: @pink;
 }

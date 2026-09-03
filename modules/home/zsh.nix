@@ -1,4 +1,8 @@
-{host, ...}: {
+{
+  host,
+  config,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -14,7 +18,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
-      BROWSER = "zen";
+      BROWSER = config.variables.browser;
       TERMINAL = "kitty";
       ZSH_THEME = "";
     };

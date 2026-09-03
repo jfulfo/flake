@@ -24,6 +24,10 @@
     popups = 12;
   };
 
+  # The zen-browser flake input installs its binary as `zen-beta`, not `zen`
+  # (the upstream default), so SUPER + W ran a command that did not exist.
+  browser = "zen-beta";
+
   defaultWallpaper = "forest.png";
   dotfilesPath = "/home/holly/flake"; # TODO put in variable
 

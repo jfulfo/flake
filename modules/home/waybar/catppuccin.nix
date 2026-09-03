@@ -91,6 +91,9 @@ in {
           "custom/separator#dot-line"
           "tray"
           "custom/separator#dot-line"
+          "pulseaudio"
+          "pulseaudio#microphone"
+          "custom/separator#dot-line"
           "battery"
           "custom/power"
           "custom/separator#blank"
@@ -118,6 +121,39 @@ in {
           persistent-workspaces = {
             "*" = 5;
           };
+        };
+
+        # Speaker. Scrolling is handled natively by the module (scroll-step);
+        # the click actions match the wpctl-based volume binds in config.lua.
+        "pulseaudio" = {
+          format = "{icon} {volume}%";
+          format-muted = "󰝟 muted";
+          format-bluetooth = "{icon}󰂯 {volume}%";
+          format-bluetooth-muted = "󰝟󰂯 muted";
+          format-icons = {
+            headphone = "󰋋";
+            headset = "󰋎";
+            phone = "󰏲";
+            portable = "󰦧";
+            car = "󰄋";
+            default = ["󰕿" "󰖀" "󰕾"];
+          };
+          scroll-step = 5;
+          tooltip-format = "{desc}";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-click-right = "pavucontrol -t 3";
+        };
+
+        # Mic. A second pulseaudio instance rendering only the source half —
+        # the module has no source-only mode, hence `format = "{format_source}"`.
+        "pulseaudio#microphone" = {
+          format = "{format_source}";
+          format-source = "󰍬 {volume}%";
+          format-source-muted = "󰍭 muted";
+          scroll-step = 5;
+          tooltip-format = "{source_desc}";
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
+          on-click-right = "pavucontrol -t 4";
         };
 
         "tray" = {
