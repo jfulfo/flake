@@ -31,8 +31,8 @@
   defaultWallpaper = "forest.png";
   dotfilesPath = "/home/holly/flake"; # TODO put in variable
 
-  gaming = false;
-  texlive = false;
+  gaming = true;
+  texlive = true;
 
   enableNFS = true;
 }
