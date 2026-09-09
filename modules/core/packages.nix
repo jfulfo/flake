@@ -70,7 +70,6 @@
       mask
       masklint
       mpv
-      mullvad-vpn
       nicotine-plus
       obs-studio
       opencode # for work
@@ -91,6 +90,7 @@
       usbutils
       v4l-utils
       vlc
+      webcord
       wget
       zoxide
     ]
