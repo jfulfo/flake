@@ -124,7 +124,8 @@ in {
         };
 
         # Speaker. Scrolling is handled natively by the module (scroll-step);
-        # the click actions match the wpctl-based volume binds in config.lua.
+        # the click actions call wpctl directly (the volume keys in config.lua go
+        # through swayosd-client for the OSD).
         "pulseaudio" = {
           format = "{icon} {volume}%";
           format-muted = "󰝟 muted";

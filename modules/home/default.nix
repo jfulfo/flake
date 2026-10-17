@@ -32,6 +32,7 @@ _: {
     ./starship.nix
     ./stylix.nix
     ./swaync
+    ./swayosd.nix
     ./tex.nix
     ./tmux.nix
     ./variables.nix

@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   services.mullvad-vpn = {
     enable = true;
-    package = pkgs.mullvad-vpn;
+    # package = pkgs.mullvad-vpn;
+    gui.enable = true;
   };
 
   systemd.services.tailscale-mullvad = {
