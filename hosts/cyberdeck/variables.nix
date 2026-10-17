@@ -1,7 +1,9 @@
-{
+let
+  user = "holly";
+in {
   # Host identity ( read by flake.nix to wire drivers + user )
   profile = "amd"; # driver bundle under ./profiles
-  user = "holly";
+  inherit user;
 
   # Git Configuration ( For Pulling Software Repos )
   gitUsername = "jfulfo";
@@ -29,7 +31,7 @@
   browser = "zen-beta";
 
   defaultWallpaper = "trees.jpg";
-  dotfilesPath = "/home/holly/flake"; # TODO put in variable
+  dotfilesPath = "/home/${user}/flake";
 
   gaming = true;
   texlive = true;

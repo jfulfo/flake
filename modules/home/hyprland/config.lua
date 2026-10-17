@@ -117,7 +117,7 @@ hl.config({
 -- 0.51 replaced the old `gestures:workspace_swipe` booleans with the `gesture`
 -- keyword; the booleans are gone in 0.56, so this is the only way to get swipes.
 -- `horizontal` covers both left and right. If the direction feels backwards,
--- flip `gestures.workspace_swipe_invert` in the settings block above.
+-- add `gestures = { workspace_swipe_invert = true }` to hl.config above.
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
 
 -- ── Animations ───────────────────────────────────────────────────────────
