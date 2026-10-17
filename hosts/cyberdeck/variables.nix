@@ -18,6 +18,9 @@ in {
       scale = "1";
     }
   ];
+  extraHardwareSettings = {
+    decoration = {blur = {passes = 2;};};
+  };
 
   fontSizes = {
     applications = 14;
@@ -36,5 +39,5 @@ in {
   gaming = true;
   texlive = true;
 
-  enableNFS = true;
+  enableNFS = false;
 }
