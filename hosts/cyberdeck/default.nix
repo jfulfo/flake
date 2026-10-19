@@ -4,6 +4,7 @@
     ./hardware.nix
     ./host-packages.nix
     ./power.nix
+    ./tailscale.nix
   ];
 
   zramSwap = {
