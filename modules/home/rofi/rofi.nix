@@ -26,7 +26,7 @@ in {
     rofi = {
       enable = true;
       package = pkgs.rofi-unwrapped;
-      extraConfig = {
+      settings = {
         modi = "drun,filebrowser,run";
         show-icons = true;
         icon-theme = "Papirus";

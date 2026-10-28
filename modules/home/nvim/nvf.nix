@@ -108,7 +108,7 @@
       statusline = {
         lualine = {
           enable = true;
-          theme = lib.mkForce "catppuccin";
+          setupOpts.options.theme = lib.mkForce "catppuccin";
           # renamed from vim.ui.breadcrumbs.* in nvf; kept explicit rather than
           # relying on the defaults staying false.
           integrations.breadcrumbs = {
